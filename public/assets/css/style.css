@@ -2269,7 +2269,7 @@ hr {
 .overlay-logo {
   position: absolute;
   top: -300%; /* Atur jarak dari atas sesuai kebutuhan */
-  left: -15%; /* Atur jarak dari kiri sesuai kebutuhan */
+  left: -9%; /* Atur jarak dari kiri sesuai kebutuhan */
   width: 300px; /* Atur lebar logo sesuai kebutuhan */
   z-index: 3;
 

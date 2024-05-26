@@ -6,7 +6,7 @@
     <title> Medical HTML-5 Template </title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="shortcut icon" type="image/x-icon" href="assets/img/logo/logofix.png">
+    <link rel="shortcut icon" type="image/x-icon" href="assets/img/logofix.png">
 
    <!-- CSS here -->
    <link rel="stylesheet" href="{{ asset('assets/css/fontawesome.css') }}">
@@ -42,7 +42,7 @@
                 <div class="row">
                     <div class="col-xl-12">
                         <div class="hero-cap hero-cap2 text-center">
-                        <img src="{{ asset('assets/img/logo/logo.png') }}" alt="Logo" class="overlay-logo">
+                        <img src="{{ asset('assets/img/logo/logofix.png') }}" alt="Logo" class="overlay-logo">
                             <h2>Daftar Pasien</h2>
                         </div>
                     </div>
@@ -65,49 +65,15 @@
     <div class="row justify-content-center">
         <div class="col-lg-8"> <!-- Melebarkan kolom form menjadi 8 kolom -->
             <form action="#" method="POST">
-                <div class="d-flex justify-content-end mb-3">
-                    <a href="/pasien_lama" class="btn btn-outline-primary ml-auto">Pasien Lama</a>
-                </div>
                 <div class="form-group">
-                    <label for="nik">NIK:</label>
-                    <input type="text" id="nik" name="nik" class="form-control" required>
-                </div>
-                <div class="form-group">
-                    <label for="no_rm">No. RM:</label>
-                    <input type="text" id="no_rm" name="no_rm" class="form-control" required>
-                </div>
-                <div class="form-group">
-                    <label for="name">Name:</label>
-                    <input type="text" id="name" name="name" class="form-control" required>
-                </div>
-                <div class="form-group">
-                    <label>Gender:</label><br>
-                    <div class="form-check form-check-inline">
-                        <input class="form-check-input" type="radio" name="gender" id="male" value="male" required>
-                        <label class="form-check-label" for="male">Male</label>
-                    </div>
-                    <div class="form-check form-check-inline">
-                        <input class="form-check-input" type="radio" name="gender" id="female" value="female" required>
-                        <label class="form-check-label" for="female">Female</label>
-                    </div>
+                    <label for="no_rm">NIK:</label>
+                    <input type="text" id="nik" name="no_rm" class="form-control" required>
                 </div>
                 <div class="form-group">
                     <label for="dob">Tanggal Lahir:</label>
                     <input type="date" id="dob" name="dob" class="form-control" required>
                 </div>
-                <div class="form-group">
-                    <label for="name">No Hp:</label>
-                    <input type="text" id="phone" name="phone" class="form-control" required>
-                </div>
-                <div class="form-group">
-                    <label for="name">Alamat</label>
-                    <textarea type="text" id="alamat" name="alamat" class="form-control" required></textarea>
-                </div>
-                <div class="form-group">
-                    <label for="name">Riwayat Penyakit</label>
-                    <textarea type="text" id="riwayat" name="riwayat" class="form-control" required></textarea>
-                </div>
-                <a class="btn btn-primary" href="layanan.php" role="button">Simpan</a>
+                <a class="btn btn-primary" href="/data_pasienlama" role="button">Cari</a>
             </form>
         </div>
     </div>

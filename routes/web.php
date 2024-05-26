@@ -17,12 +17,18 @@ Route::get('/doctor', [DokterController::class, 'index'])->name('doctor.index');
 Route::get('/doctor_detail', function () {
     return view('doctor_detail');
 });
-Route::get('/landingpage', function () {
-    return view('landingpage');
+Route::get('/dashboard_admin', function () {
+    return view('dashboard_admin');
 });
 Route::get('/landingpage_admin', function () {
     return view('landingpage_admin');
 });
 Route::get('login', function () {
     return view('login');
+});
+Route::get('pasien_lama', function () {
+    return view('pasien_lama');
+});
+Route::get('data_pasienlama', function () {
+    return view('data_pasienlama');
 });
