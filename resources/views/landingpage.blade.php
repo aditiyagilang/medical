@@ -50,10 +50,10 @@
     <!--    Main Content-->
     <!-- ===============================================-->
     <main class="main" id="top">
-    <nav class="navbar navbar-expand-lg navbar-light fixed-top py-3 d-block custom-navbar" data-navbar-on-scroll="data-navbar-on-scroll">
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top d-block custom-navbar" data-navbar-on-scroll="data-navbar-on-scroll" >
       <div class="container">
         <a class="navbar-brand" href="landingpage.php">
-          <img src="landingpage/public/assets/img/gallery/logofix.png" width="450" alt="logo" />
+          <img src="landingpage/public/assets/img/gallery/logofix.png" style="height: 300px; margin-top: -30%; margin-bottom: -30%;"  alt="logo" />
         </a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
@@ -63,11 +63,11 @@
             <li class="nav-item px-2"><a class="nav-link" aria-current="page" href="#home">Home</a></li>
             <li class="nav-item px-2"><a class="nav-link" href="#about">About Us</a></li>
             <li class="nav-item px-2"><a class="nav-link" href="#departments">Layanan</a></li>
-            <li class="nav-item px-2"><a class="nav-link" href="#doctor">Dokter</a></li>
+            <li class="nav-item px-2"><a class="nav-link" href="/dokter">Dokter</a></li>
             <li class="nav-item px-2"><a class="nav-link" href="#review">Review</a></li>
             <li class="nav-item px-2"><a class="nav-link" href="#berita">Berita</a></li>
           </ul>
-          <a class="btn btn-sm btn-outline-primary rounded-pill order-1 order-lg-0 ms-lg-4" href="daftar_pasien.php">Daftar</a>
+          <a class="btn btn-sm btn-outline-primary rounded-pill order-1 order-lg-0 ms-lg-4" href="/daftar">Daftar</a>
         </div>
       </div>
     </nav>

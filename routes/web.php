@@ -8,5 +8,11 @@ use App\Http\Controllers\PasienController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('landingpage');
+});
+Route::get('/daftar', function () {
+    return view('daftar_pasien');
+});
+Route::get('/dokter', function () {
+    return view('doctor');
 });
