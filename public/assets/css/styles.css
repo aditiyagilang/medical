@@ -1,0 +1,73 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+}
+
+.admin-container {
+    width: 80%;
+    margin: auto;
+    overflow: hidden;
+}
+
+.admin-header {
+    background: #333;
+    color: #fff;
+    padding: 20px 0;
+    text-align: center;
+}
+
+.company-logo {
+    width: 50px;
+    vertical-align: middle;
+}
+
+.admin-header h1 {
+    display: inline;
+    margin: 0;
+    font-size: 24px;
+}
+
+.admin-main {
+    background: #fff;
+    padding: 20px;
+    margin-top: 10px;
+}
+
+.admin-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.admin-table th, .admin-table td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+}
+
+.admin-table th {
+    background-color: #333;
+    color: white;
+}
+
+.admin-table tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+.admin-table tr:hover {
+    background-color: #ddd;
+}
+
+button {
+    padding: 5px 10px;
+    margin: 0 5px;
+    background-color: #333;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #555;
+}

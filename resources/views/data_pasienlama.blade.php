@@ -42,7 +42,7 @@
                 <div class="row">
                     <div class="col-xl-12">
                         <div class="hero-cap hero-cap2 text-center">
-                        <img src="{{ asset('assets/img/logo/logo.png') }}" alt="Logo" class="overlay-logo">
+                        <img src="{{ asset('assets/img/logo/logofix.png') }}" alt="Logo" class="overlay-logo">
                             <h2>Daftar Pasien</h2>
                         </div>
                     </div>
@@ -65,9 +65,6 @@
     <div class="row justify-content-center">
         <div class="col-lg-8"> <!-- Melebarkan kolom form menjadi 8 kolom -->
             <form action="#" method="POST">
-                <div class="d-flex justify-content-end mb-3">
-                    <a href="/pasien_lama" class="btn btn-outline-primary ml-auto">Pasien Lama</a>
-                </div>
                 <div class="form-group">
                     <label for="nik">NIK:</label>
                     <input type="text" id="nik" name="nik" class="form-control" required>
