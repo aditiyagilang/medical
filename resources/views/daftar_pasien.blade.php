@@ -9,17 +9,18 @@
     <link rel="shortcut icon" type="image/x-icon" href="assets/img/favicon.ico">
 
    <!-- CSS here -->
-    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
-    <link rel="stylesheet" href="assets/css/owl.carousel.min.css">
-    <link rel="stylesheet" href="assets/css/slicknav.css">
-    <link rel="stylesheet" href="assets/css/animate.min.css">
-    <link rel="stylesheet" href="assets/css/magnific-popup.css">
-    <link rel="stylesheet" href="assets/css/fontawesome-all.min.css">
-    <link rel="stylesheet" href="assets/css/themify-icons.css">
-    <link rel="stylesheet" href="assets/css/themify-icons.css">
-    <link rel="stylesheet" href="assets/css/slick.css">
-    <link rel="stylesheet" href="assets/css/nice-select.css">
-    <link rel="stylesheet" href="assets/css/style.css">
+   <link rel="stylesheet" href="{{ asset('assets/css/fontawesome.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/css/bootstrap.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/css/owl.carousel.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/css/slicknav.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/css/animate.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/css/magnific-popup.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/css/fontawesome-all.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/css/themify-icons.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/css/themify-icons.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/css/slick.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/css/nice-select.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/css/style.css') }}">
 </head>
     <!--? Preloader Start -->
     <div id="preloader-active">
@@ -27,7 +28,7 @@
             <div class="preloader-inner position-relative">
                 <div class="preloader-circle"></div>
                 <div class="preloader-img pere-text">
-                    <img src="assets/img/logo/loder.png" alt="">
+                    <img src="{{ asset('assets/img/logo/loder.png') }}" alt="">
                 </div>
             </div>
         </div>
@@ -41,7 +42,7 @@
                 <div class="row">
                     <div class="col-xl-12">
                         <div class="hero-cap hero-cap2 text-center">
-                        <img src="assets/img/logo/logo.png" alt="Logo" class="overlay-logo">
+                        <img src="{{ asset('assets/img/logo/logo.png"') }} alt="Logo" class="overlay-logo">
                             <h2>Daftar Pasien</h2>
                         </div>
                     </div>
@@ -101,7 +102,7 @@
 
     <footer>
         <!--? Footer Start-->
-        <div class="footer-area section-bg" data-background="assets/img/gallery/footer_bg.jpg">
+        <div class="footer-area section-bg" data-background="{{ asset('assets/img/gallery/footer') }}_bg.jpg">
             <div class="container">
                 <div class="footer-top footer-padding">
                     <div class="row d-flex justify-content-between">
@@ -109,7 +110,7 @@
                             <div class="single-footer-caption mb-50">
                                 <!-- logo -->
                                 <div class="footer-logo">
-                                    <a href="index.php"><img src="assets/img/logo/logo2_footer.png" alt=""></a>
+                                    <a href="index.php"><img src="{{ asset('assets/img/logo/logo2_foo') }}ter.png" alt=""></a>
                                 </div>
                             </div>
                         </div>
@@ -179,36 +180,36 @@
 
     <!-- JS here -->
 
-    <script src="./assets/js/vendor/modernizr-3.5.0.min.js"></script>
+    <script src="{{ asset('./assets/js/vendor/modernizr-3.5.0.min.js') }}"></script>
     <!-- Jquery, Popper, Bootstrap -->
-    <script src="./assets/js/vendor/jquery-1.12.4.min.js"></script>
-    <script src="./assets/js/popper.min.js"></script>
-    <script src="./assets/js/bootstrap.min.js"></script>
+    <script src="{{ asset('./assets/js/vendor/jquery-1.12.4.min.js') }}"></script>
+    <script src="{{ asset('./assets/js/popper.min.js') }}"></script>
+    <script src="{{ asset('./assets/js/bootstrap.min.js') }}"></script>
     <!-- Jquery Mobile Menu -->
-    <script src="./assets/js/jquery.slicknav.min.js"></script>
+    <script src="{{ asset('./assets/js/jquery.slicknav.min.js') }}"></script>
 
     <!-- Jquery Slick , Owl-Carousel Plugins -->
-    <script src="./assets/js/owl.carousel.min.js"></script>
-    <script src="./assets/js/slick.min.js"></script>
+    <script src="{{ asset('./assets/js/owl.carousel.min.js') }}"></script>
+    <script src="{{ asset('./assets/js/slick.min.js') }}"></script>
     <!-- One Page, Animated-HeadLin -->
-    <script src="./assets/js/wow.min.js"></script>
-    <script src="./assets/js/animated.headline.js"></script>
-    
+    <script src="{{ asset('./assets/js/wow.min.js') }}"></script>
+    <script src="{{ asset('./assets/js/animated.headline.js') }}"></script>
+
     <!-- Nice-select, sticky -->
-    <script src="./assets/js/jquery.nice-select.min.js"></script>
-    <script src="./assets/js/jquery.sticky.js"></script>
-    <script src="./assets/js/jquery.magnific-popup.js"></script>
+    <script src="{{ asset('./assets/js/jquery.nice-select.min.js') }}"></script>
+    <script src="{{ asset('./assets/js/jquery.sticky.js') }}"></script>
+    <script src="{{ asset('./assets/js/jquery.magnific-popup.js') }}"></script>
 
     <!-- contact js -->
-    <script src="./assets/js/contact.js"></script>
-    <script src="./assets/js/jquery.form.js"></script>
-    <script src="./assets/js/jquery.validate.min.js"></script>
-    <script src="./assets/js/mail-script.js"></script>
-    <script src="./assets/js/jquery.ajaxchimp.min.js"></script>
-    
-    <!-- Jquery Plugins, main Jquery -->	
-    <script src="./assets/js/plugins.js"></script>
-    <script src="./assets/js/main.js"></script>
+    <script src="{{ asset('./assets/js/contact.js') }}"></script>
+    <script src="{{ asset('./assets/js/jquery.form.js') }}"></script>
+    <script src="{{ asset('./assets/js/jquery.validate.min.js') }}"></script>
+    <script src="{{ asset('./assets/js/mail-script.js') }}"></script>
+    <script src="{{ asset('./assets/js/jquery.ajaxchimp.min.js') }}"></script>
+
+    <!-- Jquery Plugins, main Jquery -->
+    <script src="{{ asset('./assets/js/plugins.js') }}"></script>
+    <script src="{{ asset('./assets/js/main.js') }}"></script>
 
     </body>
 </html>
