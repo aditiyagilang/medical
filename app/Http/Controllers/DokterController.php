@@ -9,9 +9,10 @@ class DokterController extends Controller
 {
     public function index()
     {
-        $dokter = Dokter::all();
-        return response()->json($dokter);
+        $dokters = Dokter::all();
+        return view('doctor', compact('dokters'));
     }
+
 
     public function store(Request $request)
     {

@@ -14,6 +14,7 @@ return new class extends Migration
         Schema::create('dokter', function (Blueprint $table) {
             $table->id(); // Primary key, auto-incrementing ID
             $table->string('nama'); // Name of the doctor
+            $table->string('foto'); // Name of the doctor
             $table->foreignId('id_jadwal')->constrained('jadwal'); // Foreign key to jadwal table
             $table->foreignId('id_layanan')->constrained('layanan'); // Foreign key to services table
             $table->timestamps(); // Timestamps for created_at and updated_at

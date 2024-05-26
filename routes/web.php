@@ -13,9 +13,7 @@ Route::get('/', function () {
 Route::get('/daftar_pasien', function () {
     return view('daftar_pasien');
 });
-Route::get('/doctor', function () {
-    return view('doctor');
-});
+Route::get('/doctor', [DokterController::class, 'index'])->name('doctor.index');
 Route::get('/doctor_detail', function () {
     return view('doctor_detail');
 });
