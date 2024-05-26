@@ -2271,8 +2271,8 @@ hr {
   top: -300%; /* Atur jarak dari atas sesuai kebutuhan */
   left: -15%; /* Atur jarak dari kiri sesuai kebutuhan */
   width: 300px; /* Atur lebar logo sesuai kebutuhan */
-  z-index: 3; 
-  
+  z-index: 3;
+
   /* Pastikan logo berada di atas lapisan transparan */
 }
 
@@ -5956,9 +5956,9 @@ del {
     transition: .5s;
 }
 
-.team-item:hover img {
+/* .team-item:hover img {
     top: -30px;
-}
+} */
 
 .team-item .team-text {
     position: relative;
@@ -5966,13 +5966,13 @@ del {
     transition: .5s;
 }
 
-.team-item:hover .team-text {
-    margin-top: -60px;
+.team-item .team-text {
+    /* margin-top: -60px; */
     height: 160px;
 }
 
 .team-item .team-text .team-social {
-    opacity: 0;
+    opacity: 1;
     transition: .5s;
 }
 
