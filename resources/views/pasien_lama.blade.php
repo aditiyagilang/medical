@@ -7,7 +7,7 @@
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="shortcut icon" type="image/x-icon" href="assets/img/logofix.png">
-
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
    <!-- CSS here -->
    <link rel="stylesheet" href="{{ asset('assets/css/fontawesome.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/css/bootstrap.min.css') }}">
@@ -64,17 +64,36 @@
     </div>
     <div class="row justify-content-center">
         <div class="col-lg-8"> <!-- Melebarkan kolom form menjadi 8 kolom -->
-            <form action="#" method="POST">
-                <div class="form-group">
-                    <label for="no_rm">NIK:</label>
-                    <input type="text" id="nik" name="no_rm" class="form-control" required>
-                </div>
-                <div class="form-group">
-                    <label for="dob">Tanggal Lahir:</label>
-                    <input type="date" id="dob" name="dob" class="form-control" required>
-                </div>
-                <a class="btn btn-primary" href="/data_pasienlama" role="button">Cari</a>
-            </form>
+            @if (session('success'))
+            <div class="alert alert-success">
+                {{ session('success') }}
+            </div>
+        @endif
+
+        @if (session('error'))
+            <div class="alert alert-danger">
+                {{ session('error') }}
+            </div>
+        @endif
+
+        <form action="{{ route('pasien.index') }}" method="POST">
+            @csrf
+            <div class="form-group">
+                <label for="nik">NIK:</label>
+                <input type="text" id="nik" name="nik" class="form-control" required value="{{ old('nik') }}">
+                @error('nik')
+                    <div class="text-danger">{{ $message }}</div>
+                @enderror
+            </div>
+            <div class="form-group">
+                <label for="dob">Tanggal Lahir:</label>
+                <input type="date" id="dob" name="dob" class="form-control" required value="{{ old('dob') }}">
+                @error('dob')
+                    <div class="text-danger">{{ $message }}</div>
+                @enderror
+            </div>
+            <button type="submit" class="btn btn-primary">Cari</button>
+        </form>
         </div>
     </div>
     </div>
@@ -160,7 +179,9 @@
     </div>
 
     <!-- JS here -->
-
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <script src="{{ asset('./assets/js/vendor/modernizr-3.5.0.min.js') }}"></script>
     <!-- Jquery, Popper, Bootstrap -->
     <script src="{{ asset('./assets/js/vendor/jquery-1.12.4.min.js') }}"></script>

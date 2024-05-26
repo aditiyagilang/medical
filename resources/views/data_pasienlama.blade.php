@@ -35,81 +35,116 @@
     </div>
     <!-- Preloader Start -->
     <main>
-    <!-- Hero Start -->
-    <div class="slider-area2">
-        <div class="slider-height2 d-flex align-items-center">
-            <div class="container">
-                <div class="row">
-                    <div class="col-xl-12">
-                        <div class="hero-cap hero-cap2 text-center">
-                        <img src="{{ asset('assets/img/logo/logofix.png') }}" alt="Logo" class="overlay-logo">
-                            <h2>Daftar Pasien</h2>
+        <!-- Hero Start -->
+        <div class="slider-area2">
+            <div class="slider-height2 d-flex align-items-center">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-xl-12">
+                            <div class="hero-cap hero-cap2 text-center">
+                                <img src="{{ asset('assets/img/logo/logofix.png') }}" alt="Logo" class="overlay-logo">
+                                <h2>Daftar Pasien</h2>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-    <!-- Hero End -->
+        <!-- Hero End -->
 
-    <!-- Form Start -->
-    <div class="container mt-5 mb-5"> <!-- Menambahkan margin top dan bottom -->
-    <div class="row">
-        <div class="col-lg-12">
-            <div class="section-tittle text-center mb-50">
-                <span>First Step</span>
-                <h2>Masukkan Data Diri Kamu</h2>
+        <!-- Patient Data Start -->
+        <div class="container mt-5 mb-5">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="section-tittle text-center mb-50">
+                        <span>Patient Details</span>
+                        <h2>Data Pasien</h2>
+                    </div>
+                </div>
+            </div>
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    @if (session('success'))
+                        <div class="alert alert-success">
+                            {{ session('success') }}
+                        </div>
+                    @endif
+
+                    @if (session('error'))
+                        <div class="alert alert-danger">
+                            {{ session('error') }}
+                        </div>
+                    @endif
+
+                    @if ($pasien)
+                        <form>
+                            <div class="form-group">
+                                <label for="nik">NIK:</label>
+                                <input type="text" id="nik" name="nik" class="form-control" value="{{ $pasien->NIK }}" readonly>
+                            </div>
+                            <div class="form-group">
+                                <label for="no_rm">No. RM:</label>
+                                <input type="text" id="no_rm" name="no_rm" class="form-control" value="{{ $pasien->No_RM }}" readonly>
+                            </div>
+                            <div class="form-group">
+                                <label for="name">Name:</label>
+                                <input type="text" id="name" name="name" class="form-control" value="{{ $pasien->nama }}" readonly>
+                            </div>
+                            <div class="form-group">
+                                <label>Gender:</label><br>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="gender" id="male" value="male" {{ $pasien->gender == 'laki laki' ? 'checked' : '' }} disabled>
+                                    <label class="form-check-label" for="male">Male</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="gender" id="female" value="female" {{ $pasien->gender == 'perempun' ? 'checked' : '' }} disabled>
+                                    <label class="form-check-label" for="female">Female</label>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="dob">Tanggal Lahir:</label>
+                                <input type="date" id="dob" name="dob" class="form-control" value="{{ $pasien->tanggal_lahir }}" readonly>
+                            </div>
+                            <div class="form-group">
+                                <label for="phone">No Hp:</label>
+                                <input type="text" id="phone" name="phone" class="form-control" value="{{ $pasien->no_hp }}" readonly>
+                            </div>
+                            <div class="form-group">
+                                <label for="alamat">Alamat:</label>
+                                <textarea type="text" id="alamat" name="alamat" class="form-control" readonly>{{ $pasien->alamat }}</textarea>
+                            </div>
+                            <label for="alamat">Riwayat:</label>
+                            @if ($riwayat->isNotEmpty())
+                            @foreach ($riwayat as $record)
+                                <textarea type="text" id="riwayat" name="riwayat" class="form-control" readonly>{{ $record->riwayat_penyakit }}</textarea>
+                            @endforeach
+                        @else
+                            <p>No medical history found.</p>
+                        @endif
+
+                        </form>
+                        <form action="{{ route('riwayat.store') }}" method="POST">
+                            @csrf
+                            <input type="hidden" name="pasien_id" value="{{ $pasien->id }}">
+                            <input type="hidden" name="nik" value="{{ $pasien->NIK }}">
+                            <input type="hidden" name="dob" value="{{ $pasien->tanggal_lahir }}">
+                            <div class="form-group">
+                                <label for="riwayat">Tambah Riwayat Penyakit:</label>
+                                <textarea id="riwayat" name="riwayat" class="form-control" required></textarea>
+                            </div>
+                            <button type="submit" class="btn btn-primary">Tambah Riwayat</button>
+                        </form>
+
+                    @else
+                        <div class="alert alert-warning">
+                            Please log in to view your details.
+                        </div>
+                    @endif
+                </div>
             </div>
         </div>
-    </div>
-    <div class="row justify-content-center">
-        <div class="col-lg-8"> <!-- Melebarkan kolom form menjadi 8 kolom -->
-            <form action="#" method="POST">
-                <div class="form-group">
-                    <label for="nik">NIK:</label>
-                    <input type="text" id="nik" name="nik" class="form-control" required>
-                </div>
-                <div class="form-group">
-                    <label for="no_rm">No. RM:</label>
-                    <input type="text" id="no_rm" name="no_rm" class="form-control" required>
-                </div>
-                <div class="form-group">
-                    <label for="name">Name:</label>
-                    <input type="text" id="name" name="name" class="form-control" required>
-                </div>
-                <div class="form-group">
-                    <label>Gender:</label><br>
-                    <div class="form-check form-check-inline">
-                        <input class="form-check-input" type="radio" name="gender" id="male" value="male" required>
-                        <label class="form-check-label" for="male">Male</label>
-                    </div>
-                    <div class="form-check form-check-inline">
-                        <input class="form-check-input" type="radio" name="gender" id="female" value="female" required>
-                        <label class="form-check-label" for="female">Female</label>
-                    </div>
-                </div>
-                <div class="form-group">
-                    <label for="dob">Tanggal Lahir:</label>
-                    <input type="date" id="dob" name="dob" class="form-control" required>
-                </div>
-                <div class="form-group">
-                    <label for="name">No Hp:</label>
-                    <input type="text" id="phone" name="phone" class="form-control" required>
-                </div>
-                <div class="form-group">
-                    <label for="name">Alamat</label>
-                    <textarea type="text" id="alamat" name="alamat" class="form-control" required></textarea>
-                </div>
-                <div class="form-group">
-                    <label for="name">Riwayat Penyakit</label>
-                    <textarea type="text" id="riwayat" name="riwayat" class="form-control" required></textarea>
-                </div>
-                <a class="btn btn-primary" href="layanan.php" role="button">Simpan</a>
-            </form>
         </div>
-    </div>
-    </div>
-    <!-- Form End -->
+        <!-- Patient Data End -->
     </main>
 
     <footer>

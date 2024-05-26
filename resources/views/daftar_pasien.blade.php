@@ -21,6 +21,7 @@
     <link rel="stylesheet" href="{{ asset('assets/css/slick.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/css/nice-select.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/css/style.css') }}">
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
 </head>
     <!--? Preloader Start -->
     <div id="preloader-active">
@@ -33,6 +34,7 @@
             </div>
         </div>
     </div>
+
     <!-- Preloader Start -->
     <main>
     <!-- Hero Start -->
@@ -51,7 +53,17 @@
         </div>
     </div>
     <!-- Hero End -->
+    @if (session('success'))
+    <script>
+        alert("{{ session('success') }}");
+    </script>
+@endif
 
+@if (session('error'))
+    <script>
+        alert("{{ session('error') }}");
+    </script>
+@endif
     <!-- Form Start -->
     <div class="container mt-5 mb-5"> <!-- Menambahkan margin top dan bottom -->
     <div class="row">
@@ -62,19 +74,30 @@
             </div>
         </div>
     </div>
+    <div class="row">
+        <div class="col-4"></div>
+        <div class="col-lg-2 text-start">
+            <div class="d-flex justify-content-end mb-3">
+                <a href="/pasien_lama" class="btn btn-outline-primary ml-auto">Pasien Lama</a>
+            </div>
+        </div>
+        <div class="col-lg-2 text-start">
+            <div class="d-flex justify-content-end mb-3">
+                <a href="/pasien_lama" class=" ml-auto" style="background-color: white; color: black;">Pasien Lama</a>
+            </div>
+        </div>
+    </div>
     <div class="row justify-content-center">
         <div class="col-lg-8"> <!-- Melebarkan kolom form menjadi 8 kolom -->
-            <form action="#" method="POST">
-                <div class="d-flex justify-content-end mb-3">
-                    <a href="/pasien_lama" class="btn btn-outline-primary ml-auto">Pasien Lama</a>
-                </div>
+            <form action="{{ route('pasien.store') }}" method="POST">
+                @csrf
                 <div class="form-group">
                     <label for="nik">NIK:</label>
                     <input type="text" id="nik" name="nik" class="form-control" required>
                 </div>
                 <div class="form-group">
-                    <label for="no_rm">No. RM:</label>
-                    <input type="text" id="no_rm" name="no_rm" class="form-control" required>
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" class="form-control" required>
                 </div>
                 <div class="form-group">
                     <label for="name">Name:</label>
@@ -83,11 +106,11 @@
                 <div class="form-group">
                     <label>Gender:</label><br>
                     <div class="form-check form-check-inline">
-                        <input class="form-check-input" type="radio" name="gender" id="male" value="male" required>
+                        <input class="form-check-input" type="radio" name="gender" id="male" value="laki laki" required>
                         <label class="form-check-label" for="male">Male</label>
                     </div>
                     <div class="form-check form-check-inline">
-                        <input class="form-check-input" type="radio" name="gender" id="female" value="female" required>
+                        <input class="form-check-input" type="radio" name="gender" id="female" value="perempuan" required>
                         <label class="form-check-label" for="female">Female</label>
                     </div>
                 </div>
@@ -96,19 +119,21 @@
                     <input type="date" id="dob" name="dob" class="form-control" required>
                 </div>
                 <div class="form-group">
-                    <label for="name">No Hp:</label>
+                    <label for="phone">No Hp:</label>
                     <input type="text" id="phone" name="phone" class="form-control" required>
                 </div>
                 <div class="form-group">
-                    <label for="name">Alamat</label>
-                    <textarea type="text" id="alamat" name="alamat" class="form-control" required></textarea>
+                    <label for="alamat">Alamat:</label>
+                    <textarea id="alamat" name="alamat" class="form-control" required></textarea>
                 </div>
                 <div class="form-group">
-                    <label for="name">Riwayat Penyakit</label>
-                    <textarea type="text" id="riwayat" name="riwayat" class="form-control" required></textarea>
+                    <label for="riwayat">Riwayat Penyakit:</label>
+                    <textarea id="riwayat" name="riwayat" class="form-control" required></textarea>
                 </div>
-                <a class="btn btn-primary" href="layanan.php" role="button">Simpan</a>
+                <button type="submit" class="btn btn-primary">Simpan</button>
             </form>
+
+
         </div>
     </div>
     </div>
@@ -225,6 +250,9 @@
     <!-- Jquery Plugins, main Jquery -->
     <script src="{{ asset('./assets/js/plugins.js') }}"></script>
     <script src="{{ asset('./assets/js/main.js') }}"></script>
-
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    </body>
     </body>
 </html>

@@ -17,6 +17,7 @@ return new class extends Migration
             $table->string('NIK')->unique(); // Unique NIK
             $table->string('email'); // Email
             $table->string('nama'); // Name
+            $table->string('no_hp'); // Name
             $table->date('tanggal_lahir'); // Date of birth
             $table->text('alamat'); // Address
             $table->enum('gender', ['laki laki', 'perempuan']); // Gender
@@ -46,4 +47,8 @@ return new class extends Migration
         DB::unprepared('DROP TRIGGER IF EXISTS before_insert_pasien');
         Schema::dropIfExists('pasien'); // Drop the pasien table
     }
+
+
+
+    
 };

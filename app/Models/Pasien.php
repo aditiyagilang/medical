@@ -29,6 +29,7 @@ class Pasien extends Model
         'alamat',
         'gender',
         'No_RM',
+        'no_hp',
     ];
 
     /**
