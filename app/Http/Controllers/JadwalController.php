@@ -10,7 +10,7 @@ class JadwalController extends Controller
     public function index()
     {
         $jadwal = Jadwal::all();
-        return response()->json($jadwal);
+        return view('doctor', compact('dokters', 'layanan'));
     }
 
     public function store(Request $request)

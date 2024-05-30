@@ -76,7 +76,7 @@
                 <div class="row">
                     <div class="col-xl-12">
                         <div class="hero-cap hero-cap2 text-center">
-                        <img src="{{asset('assets/img/logo/logo.png') }}" alt="Logo" class="overlay-logo">
+                        <img src="{{asset('assets/img/logo/logofix.png') }}" alt="Logo" class="overlay-logo">
                             <h2>Daftar Pasien</h2>
                         </div>
                     </div>
@@ -101,26 +101,21 @@
                 <div class="row">
                     <div class="col-lg-6 order-lg-1">
                         <div class="doctor__item__pic">
-                            <img src="{{asset('assets/img/team/team-1.jpg') }}" alt="">
+                            <img src="{{asset($dokter->foto) }}" alt="">
                         </div>
                     </div>
                     <div class="col-lg-6 order-lg-2">
                         <div class="doctor__item__text">
-                            <span>MBBS, MRCP(UK), CCST(DERM)</span>
-                            <h2>Nandita</h2>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-                                incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices
-                            gravida. Risus commodo viverra maecenas accumsan.sis. </p>
-                            <ul>
-                                <li><i class="fa fa-check-circle"></i> Routine and medical care</li>
-                                <li><i class="fa fa-check-circle"></i> Excellence in Healthcare every</li>
-                                <li><i class="fa fa-check-circle"></i> Building a healthy environment</li>
-                                <li><i class="fa fa-check-circle"></i> cumsan lacus vel facilisis.</li>
-                            </ul>
+                            <span>{{$dokter->layanan}}</span>
+                            <h2>{{$dokter->nama}}</h2>
+                            <p>{{$dokter->deskripsi}}</p>
+
                             <div class="container box_1170 border-top-generic">
-                                <a href="#" class="genric-btn primary-border circle arrow">08.00-11.00<span class="lnr lnr-arrow-right"></span></a>
-                                <a href="#" class="genric-btn primary-border circle arrow">13.00-16.00<span class="lnr lnr-arrow-right"></span></a>
+                                @foreach ($sesi_tersedia as $sesi)
+                                    <a href="#" class="genric-btn primary-border circle arrow">{{ $sesi['mulai'] }}-{{ $sesi['selesai'] }}<span class="lnr lnr-arrow-right"></span></a>
+                                @endforeach
                             </div>
+
                         </div>
                     </div>
                 </div>

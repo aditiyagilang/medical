@@ -3,15 +3,52 @@
 namespace App\Http\Controllers;
 
 use App\Models\Booking;
+use App\Models\Dokter;
+use App\Models\Jadwal;
 use Illuminate\Http\Request;
 
 class BookingController extends Controller
 {
-    public function index()
-    {
-        $bookings = Booking::all();
-        return response()->json($bookings);
+    // public function index()
+    // {
+    //     $bookings = Booking::all();
+    //     return response()->json($bookings);
+    // }
+
+
+    public function detail($id_doctor)
+{
+    // Ambil data dokter berdasarkan id
+    $dokter = Dokter::find($id_doctor);
+
+    // Tentukan sesi waktu yang telah ditetapkan
+    $sesi_waktu = [
+        ['mulai' => '08:00', 'selesai' => '11:00'],
+        ['mulai' => '13:00', 'selesai' => '16:00'],
+        // Tambahkan sesi waktu lainnya jika ada
+    ];
+
+    // Periksa apakah ada sesi yang masih tersedia
+    $sesi_tersedia = [];
+    foreach ($sesi_waktu as $sesi) {
+        $booking_count = Booking::where('id_dokter', $id_doctor)
+                                ->whereDate('created_at', now()) // Filter berdasarkan tanggal hari ini
+                                ->whereTime('created_at', '>=', $sesi['mulai']) // Filter berdasarkan waktu mulai sesi
+                                ->whereTime('created_at', '<', $sesi['selesai']) // Filter berdasarkan waktu selesai sesi
+                                ->count();
+
+        // Cek apakah sesi masih tersedia (maksimal 5 pasien per sesi)
+        if ($booking_count < 5) {
+            $sesi_tersedia[] = [
+                'mulai' => $sesi['mulai'],
+                'selesai' => $sesi['selesai'],
+            ];
+        }
     }
+
+    return view('doctor_detail', compact('dokter', 'sesi_tersedia'));
+}
+
 
     public function store(Request $request)
     {

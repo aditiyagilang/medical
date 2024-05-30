@@ -115,7 +115,7 @@
                                 <div class="dept_info">
                                     <h3>Poli Umum</h3 >
                                     <p>Poli Umum E-Klinik Mastrip menawarkan konsultasi dan pemeriksaan fisik oleh dokter umum, serta tindakan medis tertentu. Poli ini juga menyediakan layanan kesehatan preventif dan promotif, serta penanganan penyakit umum dan kronis.</p>
-                                    <a href="doctor.php" class="dep-btn">Appointment<i class="ti-arrow-right"></i></a>
+                                    <a href="{{ url('/dokters/PoliUmum') }}" class="dep-btn">Appointment<i class="ti-arrow-right"></i></a>
                                 </div>
                             </div>
                             <div class="col-lg-5">
@@ -133,7 +133,7 @@
                                 <div class="dept_info">
                                     <h3>Poli Anak</h3 >
                                     <p>Pelayanan anak dilakukan dengan komprehensif, mulai dari deteksi, diagnosis, treatment, rehabilitasi, bahkan pemantauan tumbuh kembang anak. Poliklinik Anak memberikan layanan yang didukung oleh 3 Dokter Spesialis yang berkompeten dan siap memberikan pelayanan terbaik untuk anak-anak.</p>
-                                    <a href="doctor_detail.php" class="dep-btn">Appointment<i class="ti-arrow-right"></i></a>
+                                    <a href="{{ url('/dokters/PoliAnak') }}" class="dep-btn">Appointment<i class="ti-arrow-right"></i></a>
                                 </div>
                             </div>
                             <div class="col-lg-5">
@@ -151,7 +151,7 @@
                                 <div class="dept_info">
                                     <h3>Poli Interna</h3 >
                                     <p>E-Klinik Mastrip menyediakan beragam pemeriksaan terkait masalah organ dalam di Poliklinik Interna yang didukung oleh 3 Dokter Spesialis yang kompeten dan ahli di bidangnya. Pemeriksaan meliputi masalah pencernaan, tulang, otot, sendi, ginjal, dan lainnya.</p>
-                                    <a href="doctor.php" class="dep-btn">Appointment<i class="ti-arrow-right"></i></a>
+                                    <a href="{{ url('/dokters/PoliInterna') }}" class="dep-btn">Appointment<i class="ti-arrow-right"></i></a>
                                 </div>
                             </div>
                             <div class="col-lg-5">

@@ -42,7 +42,7 @@
                 <div class="row">
                     <div class="col-xl-12">
                         <div class="hero-cap hero-cap2 text-center">
-                            <img src="{{ asset('assets/img/logo/logo.png') }}" alt="Logo" class="overlay-logo">
+                            <img src="{{ asset('assets/img/logo/logofix.png') }}" alt="Logo" class="overlay-logo">
                             <h2>Daftar Pasien</h2>
                         </div>
                     </div>
@@ -64,26 +64,23 @@
                 </div>
             </div>
             <div class="row g-4">
-
-                    @foreach ($dokters as $dokter)
-                    <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
-                            <div class="team-item position-relative rounded overflow-hidden">
-                                <div class="overflow-hidden">
-                                    <img class="img-fluid" src="{{$dokter->foto}}"
-                                        alt="Doctor Image">
-                                </div>
-                                <div class="team-text bg-light text-center p-4">
-                                    <h5>{{ $dokter->nama }}</h5>
-                                    <p class="text-primary">{{ $dokter->nama }}</p>
-                                    <!-- Assuming there is a relationship to get the department -->
-                                    <div class="team-social text-center">
-                                        <a href="#" class="btn btn-square"
-                                            style="padding-top: 0; padding-bottom: 10px;">Pilih</a>
-                                    </div>
-                                </div>
+                @foreach ($dokters as $dokter)
+                <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+                    <div class="team-item position-relative rounded overflow-hidden">
+                        <div class="overflow-hidden">
+                            <img class="img-fluid" src="{{ asset($dokter->foto) }}" alt="Doctor Image">
+                        </div>
+                        <div class="team-text bg-light text-center p-4">
+                            <h5>{{ $dokter->nama }}</h5>
+                            <p class="text-primary">{{ $dokter->nama }}</p>
+                            <div class="team-social text-center">
+                                <a href="{{ route('doctor.detail', $dokter->id) }}" class="btn btn-square" style="padding-top: 0; padding-bottom: 10px;">Pilih</a>
                             </div>
+                        </div>
                     </div>
-                    @endforeach
+                </div>
+            @endforeach
+
 
 
             </div>

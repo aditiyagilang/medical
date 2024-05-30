@@ -7,11 +7,15 @@ use Illuminate\Http\Request;
 
 class DokterController extends Controller
 {
-    public function index()
+    public function index($layanan)
     {
-        $dokters = Dokter::all();
-        return view('doctor', compact('dokters'));
+        // Ambil semua data dokter tanpa filter
+        $dokters = Dokter::where('layanan', $layanan)->get();
+
+        return view('doctor', compact('dokters', 'layanan'));
     }
+
+
 
 
     public function store(Request $request)
