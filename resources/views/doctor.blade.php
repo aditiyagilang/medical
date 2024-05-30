@@ -74,7 +74,7 @@
                                 </div>
                                 <div class="team-text bg-light text-center p-4">
                                     <h5>{{ $dokter->nama }}</h5>
-                                    <p class="text-primary">{{ $dokter->layanan->nama }}</p>
+                                    <p class="text-primary">{{ $dokter->nama }}</p>
                                     <!-- Assuming there is a relationship to get the department -->
                                     <div class="team-social text-center">
                                         <a href="#" class="btn btn-square"

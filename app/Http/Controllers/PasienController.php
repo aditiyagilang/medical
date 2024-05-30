@@ -128,7 +128,7 @@ class PasienController extends Controller
             'riwayat_penyakit' => $validatedData['riwayat'],
         ]);
 
-        
+
         $validatedData = $request->validate([
             'nik' => 'required|exists:pasien,NIK',
             'dob' => 'required|date|exists:pasien,tanggal_lahir',
@@ -146,7 +146,8 @@ class PasienController extends Controller
 
         if ($pasien) {
             // Storing user information in session
-            return view('data_pasienlama', compact('pasien', 'riwayat'))->with('success', 'Riwayat penyakit berhasil ditambahkan.');
+            return redirect()->route('dokter.index')->with(['pasien' => $pasien, 'riwayat' => $riwayat])->with('success', 'Riwayat penyakit berhasil ditambahkan.');
+
         }
 
     }

@@ -33,6 +33,7 @@ Route::get('pasien_lama', function () {
 });
 
 Route::post('/pasien', [PasienController::class, 'store'])->name('pasien.store');
+Route::post('/doctor', [DokterController::class, 'index'])->name('dokter.index');
 
 // Uncommented login route
 Route::get('/login', [PasienController::class, 'showLoginForm'])->name('login.form');
