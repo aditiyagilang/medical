@@ -32,6 +32,10 @@ Route::get('pasien_lama', function () {
     return view('pasien_lama');
 });
 
+Route::get('/layanan', function () {
+    return view('layanan');
+});
+
 Route::post('/pasien', [PasienController::class, 'store'])->name('pasien.store');
 Route::post('/doctor', [DokterController::class, 'index'])->name('dokter.index');
 

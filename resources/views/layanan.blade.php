@@ -6,7 +6,7 @@
     <title> Medical HTML-5 Template </title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="shortcut icon" type="image/x-icon" href="{{ asset('assets/img/favicon.ico') }}">
+    <link rel="shortcut icon" type="image/x-icon" href="{{ asset('assets/img/logo/logofix.png') }}">
 
     <link rel="stylesheet" href="{{ asset('assets/css/bootstrap.min.css') }}">
 	<link rel="stylesheet" href="{{ asset('assets/css/owl.carousel.min.css') }}">
@@ -22,6 +22,21 @@
 	<link rel="stylesheet" href="{{ asset('assets/css/nice-select.css') }}">
 	<link rel="stylesheet" href="{{ asset('assets/css/style.css') }}">
 </head>
+<style>
+     .dept_main_info .dep-btn {
+        display: inline-block;
+        margin-top: 15px;
+        padding: 10px 20px;
+        background-color: #007bff;
+        color: #fff;
+        text-decoration: none;
+        border-radius: 5px;
+        transition: background-color 0.3s ease;
+    }
+    .dept_main_info .dep-btn:hover {
+        background-color: #0056b3;
+    }
+</style>
     <!--? Preloader Start -->
     <div id="preloader-active">
         <div class="preloader d-flex align-items-center justify-content-center">
@@ -42,7 +57,7 @@
                 <div class="row">
                     <div class="col-xl-12">
                         <div class="hero-cap hero-cap2 text-center">
-                        <img src="{{ asset('assets/img/logo/logo.png') }}" alt="Logo" class="overlay-logo">
+                        <img src="{{ asset('assets/img/logo/logofix.png') }}" alt="Logo" class="overlay-logo">
                             <h2>Daftar Pasien</h2>
                         </div>
                     </div>
@@ -71,38 +86,20 @@
                         <ul class="nav" id="myTab" role="tablist">
                             <li class="nav-item">
                                 <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">
-                                    <i class="flaticon-teeth"></i>
-                                    <h4>Dentistry</h4>
+                                    <i class="flaticon-doctor"></i>
+                                    <h4>Poli Umum</h4>
                                 </a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">
-                                    <i class="flaticon-cardiovascular"></i>
-                                    <h4>Cardiology</h4>
+                                    <i class="flaticon-customer-service"></i>
+                                    <h4>Poli Anak</h4>
                                 </a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" id="contact-tab" data-toggle="tab" href="#contact" role="tab" aria-controls="contact" aria-selected="false">
-                                    <i class="flaticon-ear"></i>
-                                    <h4>ENT Specialists</h4>
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" id="Astrology-tab" data-toggle="tab" href="#Astrology" role="tab" aria-controls="contact" aria-selected="false">
                                     <i class="flaticon-bone"></i>
-                                    <h4>Astrology</h4>
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" id="Neuroanatomy-tab" data-toggle="tab" href="#Neuroanatomy" role="tab" aria-controls="contact" aria-selected="false">
-                                    <i class="flaticon-lung"></i>
-                                    <h4>Neuroanatomy</h4>
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" id="Blood-tab" data-toggle="tab" href="#Blood" role="tab" aria-controls="contact" aria-selected="false">
-                                    <i class="flaticon-cell"></i>
-                                    <h4>Blood Screening</h4>
+                                    <h4>Poli Interna</h4>
                                 </a>
                             </li>
                         </ul>
@@ -116,8 +113,8 @@
                         <div class="row align-items-center no-gutters">
                             <div class="col-lg-7">
                                 <div class="dept_info">
-                                    <h3>Dentist with surgical mask holding <br> scaler near patient</h3 >
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan lacus vel facilisis. </p>
+                                    <h3>Poli Umum</h3 >
+                                    <p>Poli Umum E-Klinik Mastrip menawarkan konsultasi dan pemeriksaan fisik oleh dokter umum, serta tindakan medis tertentu. Poli ini juga menyediakan layanan kesehatan preventif dan promotif, serta penanganan penyakit umum dan kronis.</p>
                                     <a href="doctor.php" class="dep-btn">Appointment<i class="ti-arrow-right"></i></a>
                                 </div>
                             </div>
@@ -134,8 +131,8 @@
                         <div class="row align-items-center no-gutters">
                             <div class="col-lg-7">
                                 <div class="dept_info">
-                                    <h3>Dentist with surgical mask holding <br> scaler near patient</h3 >
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan lacus vel facilisis. </p>
+                                    <h3>Poli Anak</h3 >
+                                    <p>Pelayanan anak dilakukan dengan komprehensif, mulai dari deteksi, diagnosis, treatment, rehabilitasi, bahkan pemantauan tumbuh kembang anak. Poliklinik Anak memberikan layanan yang didukung oleh 3 Dokter Spesialis yang berkompeten dan siap memberikan pelayanan terbaik untuk anak-anak.</p>
                                     <a href="doctor_detail.php" class="dep-btn">Appointment<i class="ti-arrow-right"></i></a>
                                 </div>
                             </div>
@@ -152,62 +149,8 @@
                         <div class="row align-items-center no-gutters">
                             <div class="col-lg-7">
                                 <div class="dept_info">
-                                    <h3>Dentist with surgical mask holding <br> scaler near patient</h3 >
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan lacus vel facilisis. </p>
-                                    <a href="doctor.php" class="dep-btn">Appointment<i class="ti-arrow-right"></i></a>
-                                </div>
-                            </div>
-                            <div class="col-lg-5">
-                                <div class="dept_thumb">
-                                    <img src="{{ asset('assets/img/gallery/department_man.png') }}" alt="">
-                                </div>
-                            </div>
-                        </div>
-                        <!-- single_content  -->
-                    </div>
-                    <div class="tab-pane fade" id="Astrology" role="tabpanel" aria-labelledby="Astrology-tab">
-                        <!-- single_content  -->
-                        <div class="row align-items-center no-gutters">
-                            <div class="col-lg-7">
-                                <div class="dept_info">
-                                    <h3>Dentist with surgical mask holding <br> scaler near patient</h3 >
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan lacus vel facilisis. </p>
-                                    <a href="doctor.php" class="dep-btn">Appointment<i class="ti-arrow-right"></i></a>
-                                </div>
-                            </div>
-                            <div class="col-lg-5">
-                                <div class="dept_thumb">
-                                    <img src="{{ asset('assets/img/gallery/department_man.png') }}" alt="">
-                                </div>
-                            </div>
-                        </div>
-                        <!-- single_content  -->
-                    </div>
-                    <div class="tab-pane fade" id="Neuroanatomy" role="tabpanel" aria-labelledby="Neuroanatomy-tab">
-                        <!-- single_content  -->
-                        <div class="row align-items-center no-gutters">
-                            <div class="col-lg-7">
-                                <div class="dept_info">
-                                    <h3>Dentist with surgical mask holding <br> scaler near patient</h3 >
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan lacus vel facilisis. </p>
-                                    <a href="doctor.php" class="dep-btn">Appointment<i class="ti-arrow-right"></i></a>
-                                </div>
-                            </div>
-                            <div class="col-lg-5">
-                                <div class="dept_thumb">
-                                    <img src="{{ asset('assets/img/gallery/department_man.png') }}" alt="">
-                                </div>
-                            </div>
-                        </div>
-                        <!-- single_content  -->
-                    </div>
-                    <div class="tab-pane fade" id="Blood" role="tabpanel" aria-labelledby="Blood-tab">
-                        <!-- single_content  -->
-                        <div class="row align-items-center no-gutters">
-                            <div class="col-lg-7">
-                                <div class="dept_info">
-                                    <h3>Dentist with surgical mask holding <br> scaler near patient</h3 >
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan lacus vel facilisis. </p>
+                                    <h3>Poli Interna</h3 >
+                                    <p>E-Klinik Mastrip menyediakan beragam pemeriksaan terkait masalah organ dalam di Poliklinik Interna yang didukung oleh 3 Dokter Spesialis yang kompeten dan ahli di bidangnya. Pemeriksaan meliputi masalah pencernaan, tulang, otot, sendi, ginjal, dan lainnya.</p>
                                     <a href="doctor.php" class="dep-btn">Appointment<i class="ti-arrow-right"></i></a>
                                 </div>
                             </div>
