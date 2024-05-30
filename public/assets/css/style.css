@@ -6073,9 +6073,10 @@ del {
 	margin-right: 0;
 }
 .genric-btn {
-    padding: 15px 30px;
-    font-size: 18px;
-    margin: 20px; /* Menambahkan margin untuk memberikan jarak antar tombol */
+    padding: 1px 15px;
+    font-size: 12px;
+    margin-right: 10px;
+    margin-top: -20px; /* Menambahkan margin untuk memberikan jarak antar tombol */
 }
 .button-group-area {
     display: flex;

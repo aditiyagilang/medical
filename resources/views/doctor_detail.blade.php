@@ -6,7 +6,7 @@
     <title> Medical HTML-5 Template </title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="shortcut icon" type="image/x-icon" href="{{asset('assets/img/favicon.ico') }}">
+    <link rel="shortcut icon" type="image/x-icon" href="{{asset('assets/img/logo/logofix.png') }}">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap"
     rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-NhD9Ccv/En+X9FywZMiFX+o2H72+oh3vW07SKbxowcGpNRgPst5nMhJIdmg9XfSjJS3vRGkHZqL7J/v4n9FFoQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -117,35 +117,13 @@
                                 <li><i class="fa fa-check-circle"></i> Building a healthy environment</li>
                                 <li><i class="fa fa-check-circle"></i> cumsan lacus vel facilisis.</li>
                             </ul>
-                            <div class="doctor__item__social">
-                                <a href="#"><i class="fa fa-facebook"></i></a>
-                                <a href="#"><i class="fa fa-twitter"></i></a>
-                                <a href="#"><i class="fa fa-instagram"></i></a>
-                                <a href="#"><i class="fa fa-dribbble"></i></a>
+                            <div class="container box_1170 border-top-generic">
+                                <a href="#" class="genric-btn primary-border circle arrow">08.00-11.00<span class="lnr lnr-arrow-right"></span></a>
+                                <a href="#" class="genric-btn primary-border circle arrow">13.00-16.00<span class="lnr lnr-arrow-right"></span></a>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
-        </div>
-    </section>
-    <section class="button-area">
-        <div class="container box_1170 border-top-generic">
-            <div class="button-group-area mt-10 mr-10">
-            <a href="#" class="genric-btn primary-border circle arrow">10.00<span class="lnr lnr-arrow-right"></span></a>
-                <a href="#" class="genric-btn primary-border circle arrow">10.15<span class="lnr lnr-arrow-right"></span></a>
-                <a href="#" class="genric-btn primary-border circle arrow">10.30<span class="lnr lnr-arrow-right"></span></a>
-                <a href="#" class="genric-btn primary-border circle arrow">10.45<span class="lnr lnr-arrow-right"></span></a>
-                <a href="#" class="genric-btn primary-border circle arrow">11.00<span class="lnr lnr-arrow-right"></span></a>
-                <a href="#" class="genric-btn primary-border circle arrow">11.15<span class="lnr lnr-arrow-right"></span></a>
-                <a href="#" class="genric-btn primary-border circle arrow">11.30<span class="lnr lnr-arrow-right"></span></a>
-                <a href="#" class="genric-btn primary-border circle arrow">11.45<span class="lnr lnr-arrow-right"></span></a>
-                <a href="#" class="genric-btn primary-border circle arrow">12.00<span class="lnr lnr-arrow-right"></span></a>
-                <a href="#" class="genric-btn primary-border circle arrow">12.15<span class="lnr lnr-arrow-right"></span></a>
-                <a href="#" class="genric-btn primary-border circle arrow">12.30<span class="lnr lnr-arrow-right"></span></a>
-                <a href="#" class="genric-btn primary-border circle arrow">12.45<span class="lnr lnr-arrow-right"></span></a>
-                <a href="#" class="genric-btn primary-border circle arrow">13.00<span class="lnr lnr-arrow-right"></span></a>
-                <a href="#" class="genric-btn primary-border circle arrow">13.15<span class="lnr lnr-arrow-right"></span></a>
             </div>
         </div>
     </section>

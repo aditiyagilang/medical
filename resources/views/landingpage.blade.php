@@ -19,7 +19,7 @@
     <link rel="apple-touch-icon" sizes="180x180" href="{{ asset('landingpage/public/assets/img/favicons/logofix.png') }}">
     <link rel="icon" type="image/png" sizes="32x32" href="{{ asset('landingpage/public/assets/img/favicons/logofix.png') }}">
     <link rel="icon" type="image/png" sizes="16x16" href="{{ asset('landingpage/public/assets/img/favicons/logofix.png') }}">
-    <link rel="shortcut icon" type="image/x-icon" href="{{ asset('landingpage/public/assets/img/favicons/favicon.ico') }}">
+    <link rel="shortcut icon" type="image/x-icon" href="{{ asset('assets/img/logo/logofix.png') }}">
     <link rel="manifest" href="{{ asset('landingpage/public/assets/img/favicons/manifest.json') }}">
     <meta name="msapplication-TileImage" content="{{ asset('landingpage/public/assets/img/favicons/logofix.png') }}">
     <meta name="theme-color" content="#ffffff">
@@ -63,7 +63,7 @@
             <li class="nav-item px-2"><a class="nav-link" aria-current="page" href="#home">Home</a></li>
             <li class="nav-item px-2"><a class="nav-link" href="#about">About Us</a></li>
             <li class="nav-item px-2"><a class="nav-link" href="#departments">Layanan</a></li>
-            <li class="nav-item px-2"><a class="nav-link" href="/dokter">Dokter</a></li>
+            <li class="nav-item px-2"><a class="nav-link" href="#dokter">Dokter</a></li>
             <li class="nav-item px-2"><a class="nav-link" href="#review">Review</a></li>
             <li class="nav-item px-2"><a class="nav-link" href="#berita">Berita</a></li>
           </ul>
@@ -81,8 +81,8 @@
           <div class="row min-vh-xl-100 min-vh-xxl-25">
             <div class="col-md-5 col-xl-6 col-xxl-7 order-0 order-md-1 text-end"><img class="pt-7 pt-md-0 w-100" src="{{ asset('landingpage/public/assets/img/gallery/hero.png') }}" alt="hero-header" /></div>
             <div class="col-md-75 col-xl-6 col-xxl-5 text-md-start text-center py-6">
-              <h1 class="fw-light font-base fs-6 fs-xxl-7">We're <strong>determined </strong>for<br />your&nbsp;<strong>better life.</strong></h1>
-              <p class="fs-1 mb-5">You can get the care you need 24/7 – be it online or in <br />person. You will be treated by caring specialist doctors. </p><a class="btn btn-lg btn-primary rounded-pill" href="#!" role="button">Make an Appointment</a>
+              <h1 class="fw-light font-base fs-6 fs-xxl-7">Kami <strong>berkomitmen </strong>untuk<br />meningkatkan kualitas&nbsp;<strong>hidup anda</strong></h1>
+              <p class="fs-1 mb-5">Kesejahteraan Anda adalah prioritas kami, dan kami siap melayani anda dengan ramah dan penuh perhatian<br /> dari para dokter spesialis kami.</p><a class="btn btn-lg btn-primary rounded-pill" href="#!" role="button">Make an Appointment</a>
             </div>
           </div>
         </div>
@@ -218,8 +218,8 @@
           <div class="row align-items-center">
             <div class="col-md-6 order-lg-1 mb-5 mb-lg-0"><img class="fit-cover rounded-circle w-100" src="{{ asset('landingpage/public/assets/img/gallery/health-care.png') }}" alt="..." /></div>
             <div class="col-md-6 text-center text-md-start">
-              <h2 class="fw-bold mb-4">We are developing a healthcare <br class="d-none d-sm-block" />system around you</h2>
-              <p>We think that everyone should have easy access to excellent <br class="d-none d-sm-block" />healthcare. Our aim is to make the procedure as simple as <br class="d-none d-sm-block" />possible for our patients and to offer treatment no matter<br class="d-none d-sm-block" />where they are — in person or at their convenience. </p>
+              <h2 class="fw-bold mb-4">Tentang Klinik Mastrip</h2>
+              <p>Klinik Mastrip saat ini berkedudukan di Jl. Mastrip No.164, Krajan Timur, Sumbersari, Kec. Sumbersari, Kabupaten Jember, Jawa Timur. Klinik ini didirikan dengan tujuan memberikan pelayanan kesehatan bagi masyarakat sekitar. Pelayanan kesehatan diberikan, berkaitan dengan mutu dan berorientasi pada kepuasan pasien yang berdasarkan standart kualitas pasien, sehingga pasien dapat memperoleh kepuasan yang akhirnya dapat meningkatkan mutu dan kepercayaan terhadap Klinik. </p>
               <div class="py-3">
                 <button class="btn btn-lg btn-outline-primary rounded-pill" type="submit">Learn more </button>
               </div>
@@ -270,9 +270,6 @@
                             <p class="mb-0 fs-xxl-1">Pediatrics, Gochi Medicine</p>
                             <p class="text-600 mb-0">Florida, United States</p>
                             <p class="text-600 mb-4">10 years experience</p>
-                            <div class="text-center">
-                              <button class="btn btn-outline-secondary rounded-pill" type="submit">View Profile</button>
-                            </div>
                           </div>
                         </div>
                       </div>
@@ -283,9 +280,6 @@
                             <p class="mb-0 fs-xxl-1">Gynaecology, Abenka Care</p>
                             <p class="text-600 mb-0">Melbourne, Australia</p>
                             <p class="text-600 mb-4">12 years experience</p>
-                            <div class="text-center">
-                              <button class="btn btn-outline-secondary rounded-pill" type="submit">View Profile</button>
-                            </div>
                           </div>
                         </div>
                       </div>
@@ -296,9 +290,6 @@
                             <p class="mb-0 fs-xxl-1">Physiotherapy, FitCare</p>
                             <p class="text-600 mb-0">London, England</p>
                             <p class="text-600 mb-4">25 years experience</p>
-                            <div class="text-center">
-                              <button class="btn btn-secondary hover-top rounded-pill border-0" type="submit">View Profile</button>
-                            </div>
                           </div>
                         </div>
                       </div>
@@ -313,9 +304,6 @@
                             <p class="mb-0 fs-xxl-1">Pediatrics, Gochi Medicine</p>
                             <p class="text-600 mb-0">Florida, United States</p>
                             <p class="text-600 mb-4">10 years experience</p>
-                            <div class="text-center">
-                              <button class="btn btn-outline-secondary rounded-pill" type="submit">View Profile</button>
-                            </div>
                           </div>
                         </div>
                       </div>
@@ -326,9 +314,6 @@
                             <p class="mb-0 fs-xxl-1">Gynaecology, Abenka Care</p>
                             <p class="text-600 mb-0">Melbourne, Australia</p>
                             <p class="text-600 mb-4">12 years experience</p>
-                            <div class="text-center">
-                              <button class="btn btn-outline-secondary rounded-pill" type="submit">View Profile</button>
-                            </div>
                           </div>
                         </div>
                       </div>
@@ -339,9 +324,6 @@
                             <p class="mb-0 fs-xxl-1">Physiotherapy, FitCare</p>
                             <p class="text-600 mb-0">London, England</p>
                             <p class="text-600 mb-4">25 years experience</p>
-                            <div class="text-center">
-                              <button class="btn btn-secondary hover-top rounded-pill border-0" type="submit">View Profile</button>
-                            </div>
                           </div>
                         </div>
                       </div>
@@ -356,9 +338,6 @@
                             <p class="mb-0 fs-xxl-1">Pediatrics, Gochi Medicine</p>
                             <p class="text-600 mb-0">Florida, United States</p>
                             <p class="text-600 mb-4">10 years experience</p>
-                            <div class="text-center">
-                              <button class="btn btn-outline-secondary rounded-pill" type="submit">View Profile</button>
-                            </div>
                           </div>
                         </div>
                       </div>
@@ -369,9 +348,6 @@
                             <p class="mb-0 fs-xxl-1">Gynaecology, Abenka Care</p>
                             <p class="text-600 mb-0">Melbourne, Australia</p>
                             <p class="text-600 mb-4">12 years experience</p>
-                            <div class="text-center">
-                              <button class="btn btn-outline-secondary rounded-pill" type="submit">View Profile</button>
-                            </div>
                           </div>
                         </div>
                       </div>
@@ -382,9 +358,6 @@
                             <p class="mb-0 fs-xxl-1">Physiotherapy, FitCare</p>
                             <p class="text-600 mb-0">London, England</p>
                             <p class="text-600 mb-4">25 years experience</p>
-                            <div class="text-center">
-                              <button class="btn btn-secondary hover-top rounded-pill border-0" type="submit">View Profile</button>
-                            </div>
                           </div>
                         </div>
                       </div>
@@ -666,12 +639,12 @@
     <!-- ===============================================-->
     <!--    JavaScripts-->
     <!-- ===============================================-->
-    <script src="vendors/@popperjs/popper.min.js"></script>
-    <script src="vendors/bootstrap/bootstrap.min.js"></script>
-    <script src="vendors/is/is.min.js"></script>
-    <script src="https://scripts.sirv.com/sirvjs/v3/sirv.js"></script>
-    <script src="https://polyfill.io/v3/polyfill.min.js?features=window.scroll"></script>
-    <script src="vendors/fontawesome/all.min.js"></script>
+    <script src="{{ asset('vendors/@popperjs/popper.min.js') }}"></script>
+    <script src="{{ asset('vendors/bootstrap/bootstrap.min.js') }}"></script>
+    <script src="{{ asset('vendors/is/is.min.js') }}"></script>
+    <script src="{{ asset('https://scripts.sirv.com/sirvjs/v3/sirv.js') }}"></script>
+    <script src="{{ asset('https://polyfill.io/v3/polyfill.min.js?features=window.scroll') }}"></script>
+    <script src="{{ asset('vendors/fontawesome/all.min.js') }}"></script>
     <script src="{{ asset('landingpage/public/assets/js/theme.js') }}"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
