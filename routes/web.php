@@ -44,3 +44,6 @@ Route::get('/doctor_detail/{id_doctor}', [BookingController::class, 'detail'])->
 Route::get('/login', [PasienController::class, 'showLoginForm'])->name('login.form');
 Route::post('/getpasien', [PasienController::class, 'pasien'])->name('pasien.index');
 Route::post('/riwayat', [PasienController::class, 'storeRiwayat'])->name('riwayat.store');
+// Route::get('/download-pdf', [BookingController::class, 'generatePdf']);
+
+Route::post('/bookings', [BookingController::class, 'store'])->name('bookings.store');

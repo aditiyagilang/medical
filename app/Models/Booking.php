@@ -22,7 +22,6 @@ class Booking extends Model
      * @var array
      */
     protected $fillable = [
-        'id_jadwal',
         'id_pasien',
         'id_dokter',
         'status',
