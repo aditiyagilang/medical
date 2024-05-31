@@ -35,7 +35,12 @@ Route::get('pasien_lama', function () {
 Route::get('/layanan', function () {
     return view('layanan');
 });
-
+Route::get('/daftar_pasien', function () {
+    return view('daftar_pasien');
+});
+Route::get('/logins', function () {
+    return view('login');
+});
 Route::post('/pasien', [PasienController::class, 'store'])->name('pasien.store');
 Route::get('/dokters/{layanan}', [DokterController::class, 'index']);
 Route::get('/doctor_detail/{id_doctor}', [BookingController::class, 'detail'])->name('doctor.detail');
