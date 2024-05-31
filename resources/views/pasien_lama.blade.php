@@ -7,7 +7,7 @@
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="shortcut icon" type="image/x-icon" href="assets/img/logofix.png">
-    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+
    <!-- CSS here -->
    <link rel="stylesheet" href="{{ asset('assets/css/fontawesome.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/css/bootstrap.min.css') }}">
@@ -21,6 +21,7 @@
     <link rel="stylesheet" href="{{ asset('assets/css/slick.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/css/nice-select.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/css/style.css') }}">
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
 </head>
     <!--? Preloader Start -->
     <div id="preloader-active">
@@ -59,6 +60,19 @@
             <div class="section-tittle text-center mb-50">
                 <span>First Step</span>
                 <h2>Masukkan Data Diri Kamu</h2>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-4"></div>
+        <div class="col-lg-2 text-start">
+            <div class="d-flex justify-content-end mb-3">
+                <a href="/daftar_pasien" class="ml-auto" style="color: black;">Pasien Baru</a>
+            </div>
+        </div>
+        <div class="col-lg-2 text-start">
+            <div class="d-flex justify-content-end mb-3">
+                <a href="/pasien_lama" class="btn btn-outline-primary ml-auto" style="background-color: white; color: white;">Pasien Lama</a>
             </div>
         </div>
     </div>

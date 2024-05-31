@@ -78,7 +78,7 @@
         <div class="col-4"></div>
         <div class="col-lg-2 text-start">
             <div class="d-flex justify-content-end mb-3">
-                <a href="/pasien_lama" class="btn btn-outline-primary ml-auto">Pasien Lama</a>
+                <a href="/daftar_pasien" class="btn btn-outline-primary ml-auto" style="color: white;">Pasien Baru</a>
             </div>
         </div>
         <div class="col-lg-2 text-start">

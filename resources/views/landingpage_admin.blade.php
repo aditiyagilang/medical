@@ -121,42 +121,21 @@
             <div class="col-auto col-md-4 col-lg-auto text-xl-start">
               <div class="d-flex flex-column align-items-center">
                 <div class="icon-box text-center"><a class="text-decoration-none" href="#!"><img class="mb-3 deparment-icon" src="{{ asset('landingpage/public/assets/img/icons/neurology.png') }}" alt="..." /><img class="mb-3 deparment-icon-hover" src="{{ asset('landingpage/public/assets/img/icons/neurology.svg') }}" alt="..." />
-                    <p class="fs-1 fs-xxl-2 text-center">Neurology</p>
+                    <p class="fs-1 fs-xxl-2 text-center">Poli Umum</p>
                   </a></div>
               </div>
             </div>
             <div class="col-auto col-md-4 col-lg-auto text-xl-start">
               <div class="d-flex flex-column align-items-center">
                 <div class="icon-box text-center"><a class="text-decoration-none" href="#!"><img class="mb-3 deparment-icon" src="{{ asset('landingpage/public/assets/img/icons/eye-care.png') }}" alt="..." /><img class="mb-3 deparment-icon-hover" src="{{ asset('landingpage/public/assets/img/icons/eye-care.svg') }}" alt="..." />
-                    <p class="fs-1 fs-xxl-2 text-center">Eye care</p>
-                  </a></div>
-              </div>
-            </div>
-            <div class="col-auto col-md-4 col-lg-auto text-xl-start">
-              <div class="d-flex flex-column align-items-center">
-                <div class="icon-box text-center"><a class="text-decoration-none" href="#!"><img class="mb-3 deparment-icon" src="{{ asset('landingpage/public/assets/img/icons/cardiac.png') }}" alt="..." /><img class="mb-3 deparment-icon-hover" src="{{ asset('landingpage/public/assets/img/icons/cardiac.svg') }}" alt="..." />
-                    <p class="fs-1 fs-xxl-2 text-center">Cardiac care</p>
-                  </a></div>
-              </div>
-            </div>
-            <div class="col-auto col-md-4 col-lg-auto text-xl-start">
-              <div class="d-flex flex-column align-items-center">
-                <div class="icon-box text-center"><a class="text-decoration-none" href="#!"><img class="mb-3 deparment-icon" src="{{ asset('landingpage/public/assets/img/icons/heart.png') }}" alt="..." /><img class="mb-3 deparment-icon-hover" src="{{ asset('landingpage/public/assets/img/icons/heart.svg') }}" alt="..." />
-                    <p class="fs-1 fs-xxl-2 text-center">Heart care</p>
+                    <p class="fs-1 fs-xxl-2 text-center">Poli Anak</p>
                   </a></div>
               </div>
             </div>
             <div class="col-auto col-md-4 col-lg-auto text-xl-start">
               <div class="d-flex flex-column align-items-center">
                 <div class="icon-box text-center"><a class="text-decoration-none" href="#!"><img class="mb-3 deparment-icon" src="{{ asset('landingpage/public/assets/img/icons/osteoporosis.png') }}" alt="..." /><img class="mb-3 deparment-icon-hover" src="{{ asset('landingpage/public/assets/img/icons/osteoporosis.svg') }}" alt="..." />
-                    <p class="fs-1 fs-xxl-2 text-center">Osteoporosis</p>
-                  </a></div>
-              </div>
-            </div>
-            <div class="col-auto col-md-4 col-lg-auto text-xl-start">
-              <div class="d-flex flex-column align-items-center">
-                <div class="icon-box text-center"><a class="text-decoration-none" href="#!"><img class="mb-3 deparment-icon" src="{{ asset('landingpage/public/assets/img/icons/ent.png') }}" alt="..." /><img class="mb-3 deparment-icon-hover" src="{{ asset('landingpage/public/assets/img/icons/ent.svg') }}" alt="..." />
-                    <p class="fs-1 fs-xxl-2 text-center">ENT</p>
+                    <p class="fs-1 fs-xxl-2 text-center">Poli Interna</p>
                   </a></div>
               </div>
             </div>
