@@ -16,7 +16,6 @@ class Booking extends Model
      */
     protected $table = 'booking';
     protected $fillable = [
-        'id_jadwal',
         'id_pasien',
         'id_dokter',
         'status',

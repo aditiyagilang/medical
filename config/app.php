@@ -128,4 +128,12 @@ return [
         'PDF' => Barryvdh\DomPDF\Facade::class,
     ],
 
+    'aliases' => [
+        // ...
+        'PDF' => Barryvdh\DomPDF\Facade\Pdf::class,
+    ],
+
+
+
+
 ];

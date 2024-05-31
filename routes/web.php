@@ -43,9 +43,15 @@ Route::get('/doctor_detail/{id_doctor}', [BookingController::class, 'detail'])->
 Route::get('/signin', [UserController::class, 'showLoginForm'])->name('login.form');
 Route::post('/getpasien', [PasienController::class, 'pasien'])->name('pasien.index');
 Route::post('/riwayat', [PasienController::class, 'storeRiwayat'])->name('riwayat.store');
+
 Route::post('/signin', [UserController::class, 'login'])->name('login.index');
 Route::get('/dashboard_admin',[PasienController::class, 'index']);
 Route::get('/export-to-pdf', 'App\Http\Controllers\PasienController@exportToPdf')->name('export.pdf');
 
 Route::get('/riwayat/{id}', [PasienController::class, 'riwayat']);
 Route::delete('/delete/{id}', [PasienController::class, 'delete'])->name('delete.pasien');
+
+// Route::get('/download-pdf', [BookingController::class, 'generatePdf']);
+
+Route::post('/bookings', [BookingController::class, 'store'])->name('bookings.store');
+
