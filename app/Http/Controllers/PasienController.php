@@ -1,21 +1,111 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use PDF;
 use App\Models\Pasien;
+use App\Models\Booking;
 use App\Models\RiwayatPenyakit;
 use Dotenv\Exception\ValidationException;
 use Illuminate\Contracts\Session\Session;
 use Illuminate\Database\QueryException;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class PasienController extends Controller
 {
     public function index()
-    {
-        $pasien = Pasien::all();
-        return response()->json($pasien);
+{
+    // Query untuk join tabel booking, pasien, dan dokter
+    $data = DB::table('booking')
+        ->join('pasien', 'booking.id_pasien', '=', 'pasien.id')
+        ->join('dokter', 'booking.id_dokter', '=', 'dokter.id')
+        ->select(
+            'booking.id as id_booking',
+            'booking.status',
+            'booking.created_at',
+            'pasien.id as id_pasien',
+            'pasien.NIK',
+            'pasien.No_RM',
+            'pasien.nama as nama',
+            'pasien.tanggal_lahir',
+            'pasien.id as pasien_id',
+
+            'dokter.nama as nama_dokter',
+            'dokter.layanan as nama_layanan'
+        )
+        ->orderBy('booking.id', 'desc')
+        ->get();
+
+    // Calculate age and add it to each record
+    $data = $data->map(function ($item) {
+        $item->umur = \Carbon\Carbon::parse($item->tanggal_lahir)->age;
+        return $item;
+    });
+
+    return view('dashboard_admin', compact('data'));
+}
+public function delete($id)
+{
+    // dd($id);
+    $pasien = Booking::find($id);
+    if ($pasien) {
+        $pasien->delete();
+        return response()->json(['message' => 'Record deleted successfully.']);
+    } else {
+        return response()->json(['error' => 'Record not found.'], 404);
     }
+}
+public function riwayat($id)
+    {
+        // Mengambil semua riwayat penyakit berdasarkan pasien ID
+        $riwayat = RiwayatPenyakit::where('pasien_id', $id)->get();
+
+        // Mengembalikan data dalam format JSON
+        return response()->json($riwayat);
+    }
+
+
+
+
+    public function exportToPdf()
+    {
+        $data = DB::table('booking')
+        ->join('pasien', 'booking.id_pasien', '=', 'pasien.id')
+        ->join('dokter', 'booking.id_dokter', '=', 'dokter.id')
+        ->select(
+            'booking.id as id_booking',
+            'booking.status',
+            'booking.created_at',
+            'pasien.id as id_pasien',
+            'pasien.NIK',
+            'pasien.No_RM',
+            'pasien.gender',
+            'pasien.no_hp',
+            'pasien.alamat',
+            'pasien.nama as nama',
+            'pasien.tanggal_lahir',
+            'pasien.id as pasien_id',
+
+            'dokter.nama as nama_dokter',
+            'dokter.layanan as nama_layanan'
+        )
+        ->orderBy('booking.id', 'desc')
+        ->get();
+
+    // Calculate age and add it to each record
+    $data = $data->map(function ($item) {
+        $item->umur = \Carbon\Carbon::parse($item->tanggal_lahir)->age;
+        return $item;
+    });
+        $pdf = PDF::loadView('riwayat', compact('data'))->setPaper('a4', 'landscape');
+
+        return $pdf->download('pasien.pdf');
+    }
+
+
+
+
+
 
     public function store(Request $request)
     {

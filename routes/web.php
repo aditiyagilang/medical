@@ -4,6 +4,7 @@ use App\Http\Controllers\DokterController;
 use App\Http\Controllers\JadwalController;
 use App\Http\Controllers\LayananController;
 use App\Http\Controllers\PasienController;
+use App\Http\Controllers\UserController;
 use App\Models\Booking;
 use Illuminate\Support\Facades\Route;
 
@@ -21,9 +22,7 @@ Route::get('/daftar_pasien', function () {
 //     return view('doctor_detail');
 // });
 
-Route::get('/dashboard_admin', function () {
-    return view('dashboard_admin');
-});
+
 
 Route::get('/landingpage_admin', function () {
     return view('landingpage_admin');
@@ -41,6 +40,12 @@ Route::post('/pasien', [PasienController::class, 'store'])->name('pasien.store')
 Route::get('/dokters/{layanan}', [DokterController::class, 'index']);
 Route::get('/doctor_detail/{id_doctor}', [BookingController::class, 'detail'])->name('doctor.detail');
 // Uncommented login route
-Route::get('/login', [PasienController::class, 'showLoginForm'])->name('login.form');
+Route::get('/signin', [UserController::class, 'showLoginForm'])->name('login.form');
 Route::post('/getpasien', [PasienController::class, 'pasien'])->name('pasien.index');
 Route::post('/riwayat', [PasienController::class, 'storeRiwayat'])->name('riwayat.store');
+Route::post('/signin', [UserController::class, 'login'])->name('login.index');
+Route::get('/dashboard_admin',[PasienController::class, 'index']);
+Route::get('/export-to-pdf', 'App\Http\Controllers\PasienController@exportToPdf')->name('export.pdf');
+
+Route::get('/riwayat/{id}', [PasienController::class, 'riwayat']);
+Route::delete('/delete/{id}', [PasienController::class, 'delete'])->name('delete.pasien');

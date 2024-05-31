@@ -29,9 +29,11 @@ class RiwayatPenyakit extends Model
         'riwayat_penyakit',
     ];
 
+ 
+
     public function pasien()
     {
-        return $this->belongsTo(Pasien::class);
+        return $this->belongsTo(Pasien::class, 'pasien_id');
     }
 }
 

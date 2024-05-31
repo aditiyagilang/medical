@@ -15,12 +15,6 @@ class Layanan extends Model
      * @var string
      */
     protected $table = 'layanan';
-
-    /**
-     * The attributes that are mass assignable.
-     *
-     * @var array
-     */
     protected $fillable = [
         'nama',
     ];

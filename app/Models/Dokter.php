@@ -9,12 +9,6 @@ class Dokter extends Model
 {
     use HasFactory;
     protected $table = 'dokter';
-
-    /**
-     * The attributes that are mass assignable.
-     *
-     * @var array
-     */
     protected $fillable = [
         'nama',
         'id_jadwal',
@@ -28,7 +22,10 @@ class Dokter extends Model
     {
         return $this->belongsTo(Layanan::class, 'id_layanan');
     }
-
+    public function booking()
+    {
+        return $this->hasMany(Booking::class, 'id_dokter');
+    }
     /**
      * Get the schedule associated with the doctor.
      */

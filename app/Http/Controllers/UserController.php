@@ -60,6 +60,11 @@ class UserController extends Controller
      * @param  \App\Models\User  $user
      * @return \Illuminate\Http\Response
      */
+
+     public function showLoginForm()
+     {
+         return view('login');
+     }
     public function update(Request $request, User $user)
     {
         $validatedData = $request->validate([
@@ -87,5 +92,31 @@ class UserController extends Controller
     {
         $user->delete();
         return response()->json(null, 204);
+    }
+
+
+    public function login(Request $request)
+    {
+        // DD("AAAA");
+        $validatedData = $request->validate([
+            'username' => 'required',
+            'password' => 'required',
+        ]);
+        $hashedPassword = bcrypt($validatedData['password']);
+// DD($hashedPassword);
+    // Debug output untuk validasi data dan hasil bcrypt
+
+
+        // $pass = bcrypt($validatedData->password);
+        // dd($pass);
+        $user = User::where('username', $validatedData['username'])->first();
+        // dd($hashedPassword, " = " , $user->password);
+        if ($user && Hash::check($validatedData['password'], $user->password)) {
+            return redirect('/dashboard_admin');
+        }
+        else {
+            return back();
+        }
+
     }
 }

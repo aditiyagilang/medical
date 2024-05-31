@@ -15,12 +15,6 @@ class Booking extends Model
      * @var string
      */
     protected $table = 'booking';
-
-    /**
-     * The attributes that are mass assignable.
-     *
-     * @var array
-     */
     protected $fillable = [
         'id_jadwal',
         'id_pasien',
@@ -51,4 +45,6 @@ class Booking extends Model
     {
         return $this->belongsTo(Dokter::class, 'id_dokter');
     }
+
+    
 }

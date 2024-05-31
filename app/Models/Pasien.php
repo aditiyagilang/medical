@@ -35,8 +35,15 @@ class Pasien extends Model
     /**
      * Get the bookings for the patient.
      */
+
+
     public function bookings()
     {
         return $this->hasMany(Booking::class, 'id_pasien');
+    }
+
+    public function riwayatPenyakit()
+    {
+        return $this->hasOne(RiwayatPenyakit::class, 'pasien_id');
     }
 }

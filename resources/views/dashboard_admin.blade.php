@@ -1,20 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Admin Panel</title>
-    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
-    <style>
-        .company-logo {
-            width: 150px;
-            vertical-align: middle;
-        }
-        .admin-header {
-            text-align: center;
-        }
-    </style>
+    <title>Data Pasien</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </head>
+
 <body>
     <div class="container">
         <header class="d-flex justify-content-between align-items-center py-3 my-4 border-bottom admin-header">
@@ -24,43 +20,93 @@
         <main>
             <div class="d-flex justify-content-between mb-3">
                 <input type="date" id="filterDate" class="form-control w-25">
-                <button class="btn btn-success" onclick="downloadReport()">Download Laporan</button>
+                <button class="btn btn-success" onclick="location.href='{{ route('export.pdf') }}'">Download Laporan</button>
+
+
             </div>
+
             <div class="table-responsive">
                 <table class="table table-bordered table-striped" id="dataTable">
                     <thead class="thead-dark">
                         <tr>
-                            <th>ID</th>
-                            <th>Name</th>
+                            <th>No.RM</th>
+                            <th>NIK</th>
+                            <th>Nama</th>
+                            <th>Umur</th>
+                            <th>Layanan</th>
+                            <th>Dokter</th>
+                            <th>Jam</th>
                             <th>Tanggal</th>
                             <th>Actions</th>
                         </tr>
                     </thead>
                     <tbody>
-                        <tr data-date="2024-05-26">
-                            <td>1</td>
-                            <td>John Doe</td>
-                            <td>john.doe@example.com</td>
-                            <td>
-                                <button class="btn btn-primary btn-sm" onclick="editRow(this)">Edit</button>
-                                <button class="btn btn-danger btn-sm" onclick="deleteRow(this)">Delete</button>
-                            </td>
-                        </tr>
-                        <tr data-date="2024-05-27">
-                            <td>2</td>
-                            <td>Jane Smith</td>
-                            <td>jane.smith@example.com</td>
-                            <td>
-                                <button class="btn btn-primary btn-sm" onclick="editRow(this)">Edit</button>
-                                <button class="btn btn-danger btn-sm" onclick="deleteRow(this)">Delete</button>
-                            </td>
-                        </tr>
+                        @foreach ($data as $pasien)
+                            <tr data-date="{{ \Carbon\Carbon::parse($pasien->created_at)->format('Y-m-d') }}">
+                                <td>{{ $pasien->No_RM }}</td>
+                                <td>{{ $pasien->NIK }}</td>
+                                <td>{{ $pasien->nama }}</td>
+                                <td>{{ $pasien->umur }} tahun</td>
+                                <td>{{ $pasien->nama_layanan }}</td>
+                                <td>{{ $pasien->nama_dokter }}</td>
+                                <td>{{ \Carbon\Carbon::parse($pasien->created_at)->format('H:i:s') }}</td>
+                                <td>{{ \Carbon\Carbon::parse($pasien->created_at)->format('d/m/Y') }}</td>
+                                <td>
+                                    <button class="btn btn-danger btn-sm" onclick="deleteRow({{ $pasien->id_booking }})">Delete</button>
+
+                                    <button class="btn btn-info btn-sm"
+                                        onclick="viewRiwayat({{ $pasien->pasien_id }})">View</button>
+                                </td>
+                            </tr>
+                        @endforeach
                     </tbody>
                 </table>
             </div>
         </main>
+
+        <!-- Modal -->
+        <div class="modal fade" id="riwayatModal" tabindex="-1" role="dialog" aria-labelledby="riwayatModalLabel"
+            aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="riwayatModalLabel">Riwayat Pasien</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <ul id="riwayatList" class="list-group">
+                            <!-- Riwayat will be appended here -->
+                        </ul>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
+
     <script>
+        function viewRiwayat(pasienId) {
+            fetch(`/riwayat/${pasienId}`)
+                .then(response => response.json())
+                .then(data => {
+                    const riwayatList = document.getElementById('riwayatList');
+                    riwayatList.innerHTML = '';
+                    data.forEach(riwayat => {
+                        const li = document.createElement('li');
+                        li.classList.add('list-group-item');
+                        li.textContent = riwayat.riwayat_penyakit;
+                        riwayatList.appendChild(li);
+                    });
+                    $('#riwayatModal').modal('show');
+                })
+                .catch(error => console.error('Error fetching riwayat:', error));
+        }
+
+
         document.getElementById('filterDate').addEventListener('change', function() {
             const selectedDate = this.value;
             const rows = document.querySelectorAll('#dataTable tbody tr');
@@ -90,24 +136,31 @@
             document.body.removeChild(link);
         }
 
-        function editRow(button) {
-            const row = button.parentElement.parentElement;
-            const cells = row.getElementsByTagName('td');
-            const id = cells[0].innerText;
-            const name = cells[1].innerText;
-            const email = cells[2].innerText;
-            alert(`Edit row with ID: ${id}, Name: ${name}, Email: ${email}`);
-            // Add your edit functionality here
-        }
+        function deleteRow(pasienId) {
+            if (confirm('Are you sure you want to delete this record?')) {
+                fetch(`/delete/${pasienId}`, {
+                        method: 'DELETE',
+                        headers: {
+                            'Content-Type': 'application/json',
+                            'X-CSRF-TOKEN': '{{ csrf_token() }}'
+                        }
+                    })
+                    .then(response => {
+                        if (!response.ok) {
+                            throw new Error('Network response was not ok');
+                        }
+                        return response.json();
+                    })
+                    .then(data => {
+                        // Refresh halaman setelah berhasil menghapus
+                        location.reload();
+                    })
+                    .catch(error => console.error('Error deleting record:', error));
 
-        function deleteRow(button) {
-            const row = button.parentElement.parentElement;
-            row.parentElement.removeChild(row);
-            alert('Row deleted');
+
+            }
         }
     </script>
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
+
 </html>
