@@ -6,6 +6,7 @@ use App\Http\Controllers\LayananController;
 use App\Http\Controllers\PasienController;
 use App\Http\Controllers\UserController;
 use App\Models\Booking;
+use App\Models\Pasien;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
@@ -32,9 +33,8 @@ Route::get('pasien_lama', function () {
     return view('pasien_lama');
 });
 
-Route::get('/layanan', function () {
-    return view('layanan');
-});
+Route::get('/layanan', [PasienController::class, 'layanan'])->name('layanan');
+
 Route::get('/daftar_pasien', function () {
     return view('daftar_pasien');
 });
@@ -50,7 +50,7 @@ Route::post('/getpasien', [PasienController::class, 'pasien'])->name('pasien.ind
 Route::post('/riwayat', [PasienController::class, 'storeRiwayat'])->name('riwayat.store');
 
 Route::post('/signin', [UserController::class, 'login'])->name('login.index');
-Route::get('/dashboard_admin',[PasienController::class, 'index']);
+Route::get('/dashboard_admin', [PasienController::class, 'index'])->name('dashboard_admin');
 Route::get('/export-to-pdf', 'App\Http\Controllers\PasienController@exportToPdf')->name('export.pdf');
 
 Route::get('/riwayat/{id}', [PasienController::class, 'riwayat']);

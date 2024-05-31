@@ -19,10 +19,11 @@
         </header>
         <main>
             <div class="d-flex justify-content-between mb-3">
-                <input type="date" id="filterDate" class="form-control w-25">
+                <form action="{{ route('dashboard_admin') }}" method="GET" class="form-inline">
+                    <input type="date" name="filterDate" id="filterDate" class="form-control w-25" value="{{ $filterDate }}">
+
+                </form>
                 <button class="btn btn-success" onclick="location.href='{{ route('export.pdf') }}'">Download Laporan</button>
-
-
             </div>
 
             <div class="table-responsive">
