@@ -13,10 +13,13 @@ use Illuminate\Support\Facades\DB;
 
 class PasienController extends Controller
 {
-    public function index()
+    public function index(Request $request)
 {
+    // Ambil filter tanggal dari request
+    $filterDate = $request->input('filterDate');
+
     // Query untuk join tabel booking, pasien, dan dokter
-    $data = DB::table('booking')
+    $query = DB::table('booking')
         ->join('pasien', 'booking.id_pasien', '=', 'pasien.id')
         ->join('dokter', 'booking.id_dokter', '=', 'dokter.id')
         ->select(
@@ -29,21 +32,43 @@ class PasienController extends Controller
             'pasien.nama as nama',
             'pasien.tanggal_lahir',
             'pasien.id as pasien_id',
-
             'dokter.nama as nama_dokter',
             'dokter.layanan as nama_layanan'
         )
-        ->orderBy('booking.id', 'desc')
-        ->get();
+        ->orderBy('booking.id', 'desc');
 
-    // Calculate age and add it to each record
+    // Terapkan filter tanggal jika ada
+    if ($filterDate) {
+        $query->whereDate('booking.created_at', $filterDate);
+    }
+
+    $data = $query->get();
+
+    // Hitung umur dan tambahkan ke setiap record
     $data = $data->map(function ($item) {
         $item->umur = \Carbon\Carbon::parse($item->tanggal_lahir)->age;
         return $item;
     });
 
-    return view('dashboard_admin', compact('data'));
+    return view('dashboard_admin', compact('data', 'filterDate'));
 }
+
+
+
+public function layanan()
+{
+    // Cek apakah ID pasien ada di sesi
+    if (session()->has('pasien_id')) {
+        // Jika ada, arahkan ke view layanan
+        return view('layanan');
+    } else {
+        // Jika tidak ada, arahkan kembali ke halaman daftar_pasien
+        return redirect('/daftar_pasien')->with('error', 'Anda harus mendaftar terlebih dahulu.');
+    }
+}
+
+
+
 public function delete($id)
 {
     // dd($id);
@@ -138,13 +163,17 @@ public function riwayat($id)
                 'riwayat_penyakit' => $validatedData['riwayat'],
             ]);
 
-            return redirect()->back()->with('success', 'Data pasien berhasil disimpan.');
+            // Save pasien ID to session
+            session()->put('pasien_id', $pasien->id);
+
+            return redirect('/layanan')->with('success', 'Data pasien berhasil disimpan.');
         } catch (ValidationException $e) {
             return redirect()->back()->withInput()->with('error', 'NIK sudah terdaftar.');
         } catch (QueryException $e) {
             return redirect()->back()->withInput()->with('error', 'Gagal menambahkan data.');
         }
     }
+
 
     public function show(Pasien $pasien)
     {

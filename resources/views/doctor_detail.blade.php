@@ -115,17 +115,20 @@
                             <p>{{ $dokter->deskripsi }}</p>
 
                             <div class="container box_1170 border-top-generic">
-                                @foreach ($sesi_tersedia as $sesi)
-                                <form action="{{ route('bookings.store') }}" method="POST" style="display:inline;" id="form-{{ $loop->index }}">
+                                @foreach ($sesi_tersedia as $index => $sesi)
+                                <form action="{{ route('bookings.store') }}" method="POST" style="display:inline;" id="form-{{ $index }}">
                                     @csrf
-                                    <input type="hidden" name="id_pasien" value="2">
                                     <input type="hidden" name="id_dokter" value="{{ $dokter->id }}">
                                     <input type="hidden" name="status" value="confirmed">
-                                    <a href="#" class="genric-btn primary-border circle arrow" onclick="document.getElementById('form-{{ $loop->index }}').submit();">
+                                    <input type="hidden" name="waktu" value="{{ $sesi['mulai'] }}"> <!-- Tambahkan input waktu -->
+                                    <a href="#" class="genric-btn primary-border circle arrow" onclick="document.getElementById('form-{{ $index }}').submit();">
                                         {{ $sesi['mulai'] }}-{{ $sesi['selesai'] }}<span class="lnr lnr-arrow-right"></span>
                                     </a>
                                 </form>
-                                @endforeach
+                            @endforeach
+
+
+
                             </div>
 
                         </div>

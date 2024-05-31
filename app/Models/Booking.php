@@ -19,6 +19,7 @@ class Booking extends Model
         'id_pasien',
         'id_dokter',
         'status',
+        'sesi',
     ];
 
     /**
@@ -45,5 +46,5 @@ class Booking extends Model
         return $this->belongsTo(Dokter::class, 'id_dokter');
     }
 
-    
+
 }
