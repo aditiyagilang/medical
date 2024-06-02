@@ -93,41 +93,44 @@ class PasienController extends Controller
 
 
 
-    public function exportToPdf()
-    {
-        $data = DB::table('booking')
-            ->join('pasien', 'booking.id_pasien', '=', 'pasien.id')
-            ->join('dokter', 'booking.id_dokter', '=', 'dokter.id')
-            ->select(
-                'booking.id as id_booking',
-                'booking.status',
-                'booking.created_at',
-                'pasien.id as id_pasien',
-                'pasien.NIK',
-                'pasien.No_RM',
-                'pasien.gender',
-                'pasien.no_hp',
-                'pasien.alamat',
-                'pasien.nama as nama',
-                'pasien.tanggal_lahir',
-                'pasien.id as pasien_id',
+    public function exportToPdf(Request $request)
+{
+    $startDate = $request->query('startDate');
+    $endDate = $request->query('endDate');
 
-                'dokter.nama as nama_dokter',
-                'dokter.layanan as nama_layanan'
-            )
-            ->orderBy('booking.id', 'desc')
-            ->get();
+    $data = DB::table('booking')
+        ->join('pasien', 'booking.id_pasien', '=', 'pasien.id')
+        ->join('dokter', 'booking.id_dokter', '=', 'dokter.id')
+        ->select(
+            'booking.id as id_booking',
+            'booking.status',
+            'booking.created_at',
+            'pasien.id as id_pasien',
+            'pasien.NIK',
+            'pasien.No_RM',
+            'pasien.gender',
+            'pasien.no_hp',
+            'pasien.alamat',
+            'pasien.nama as nama',
+            'pasien.tanggal_lahir',
+            'pasien.id as pasien_id',
+            'dokter.nama as nama_dokter',
+            'dokter.layanan as nama_layanan'
+        )
+        ->whereBetween('booking.created_at', [$startDate, $endDate])
+        ->orderBy('booking.id', 'desc')
+        ->get();
 
-        // Calculate age and add it to each record
-        $data = $data->map(function ($item) {
-            $item->umur = \Carbon\Carbon::parse($item->tanggal_lahir)->age;
-            return $item;
-        });
-        $pdf = PDF::loadView('riwayat', compact('data'))->setPaper('a4', 'landscape');
+    // Calculate age and add it to each record
+    $data = $data->map(function ($item) {
+        $item->umur = \Carbon\Carbon::parse($item->tanggal_lahir)->age;
+        return $item;
+    });
 
-        return $pdf->download('pasien.pdf');
-    }
+    $pdf = PDF::loadView('riwayat', compact('data'))->setPaper('a4', 'landscape');
 
+    return $pdf->download('pasien.pdf');
+}
 
 
 

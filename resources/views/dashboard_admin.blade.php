@@ -18,13 +18,27 @@
             <h1 class="mx-auto">Data Pasien</h1>
         </header>
         <main>
-            <div class="d-flex justify-content-between mb-3">
-                <form action="{{ route('dashboard_admin') }}" method="GET" class="form-inline">
-                    <input type="date" name="filterDate" id="filterDate" class="form-control w-25" value="{{ $filterDate }}">
+            <div class="row">
+                <div class="col-lg-6">
+                    <div class=" justify-content-between mb-3">
+                        <form action="{{ route('dashboard_admin') }}" method="GET" class="form-inline">
+                            <input type="date" name="filterDate" id="filterDate" class="form-control w-25"
+                                value="{{ $filterDate }}">
 
-                </form>
-                <button class="btn btn-success" onclick="location.href='{{ route('export.pdf') }}'">Download Laporan</button>
+                        </form>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="justify-content-between mb-3">
+                        <form action="{{ route('export.pdf') }}" method="GET" class="form-inline">
+                            <input type="date" name="startDate" id="startDate" class="form-control w-25" required>
+                            <input type="date" name="endDate" id="endDate" class="form-control w-25 ml-2" required>
+                            <button type="submit" class="btn btn-success ml-2">Download Laporan</button>
+                        </form>
+                    </div>
+                </div>
             </div>
+
 
             <div class="table-responsive">
                 <table class="table table-bordered table-striped" id="dataTable">
@@ -53,7 +67,8 @@
                                 <td>{{ \Carbon\Carbon::parse($pasien->created_at)->format('H:i:s') }}</td>
                                 <td>{{ \Carbon\Carbon::parse($pasien->created_at)->format('d/m/Y') }}</td>
                                 <td>
-                                    <button class="btn btn-danger btn-sm" onclick="deleteRow({{ $pasien->id_booking }})">Delete</button>
+                                    <button class="btn btn-danger btn-sm"
+                                        onclick="deleteRow({{ $pasien->id_booking }})">Delete</button>
 
                                     <button class="btn btn-info btn-sm"
                                         onclick="viewRiwayat({{ $pasien->pasien_id }})">View</button>

@@ -44,7 +44,7 @@
                     <td>{{ $pasien->NIK }}</td>
                     <td>{{ $pasien->nama }}</td>
                     <td>{{ $pasien->gender }}</td>
-                    <td>{{ $pasien->tanggal_lahir }}</td>
+                    <td>{{$pasien->umur }} tahun</td>
                     <td>{{ $pasien->no_hp }}</td>
                     <td>{{ $pasien->alamat }}</td>
                     {{-- <td>{{ $pasien->riwayatPenyakit }}</td> --}}

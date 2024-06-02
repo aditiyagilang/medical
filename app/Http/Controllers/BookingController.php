@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Booking;
 use App\Models\Dokter;
 use App\Models\Jadwal;
+use App\Models\Pasien;
 // use Barryvdh\DomPDF\PDF;
 use PDF;
 use Illuminate\Http\Request;
@@ -51,59 +52,65 @@ class BookingController extends Controller
         return view('doctor_detail', compact('dokter', 'sesi_tersedia'));
     }
     public function store(Request $request)
-    {
-        $validatedData = $request->validate([
-            'waktu' => 'required|date_format:H:i',
-            'id_dokter' => 'required|exists:dokter,id',
-            'status' => 'required|string',
-        ]);
+{
+    $validatedData = $request->validate([
+        'waktu' => 'required|date_format:H:i',
+        'id_dokter' => 'required|exists:dokter,id',
+        'status' => 'required|string',
+    ]);
 
-        // Ambil ID pasien dari session
-        $validatedData['id_pasien'] = session()->get('pasien_id');
+    // Ambil ID pasien dari session
+    $validatedData['id_pasien'] = session()->get('pasien_id');
 
-        if (!$validatedData['id_pasien']) {
-            return view('/daftar_pasien')->with('error', 'ID pasien tidak ditemukan dalam sesi. Silakan daftar terlebih dahulu.');
-        }
-
-        // Tentukan sesi berdasarkan waktu yang dipilih
-        $waktu = $validatedData['waktu'];
-
-        // Tentukan sesi berdasarkan waktu mulai
-        if ($waktu == '08:00') {
-            $sesi = 'Sesi1';
-        } elseif ($waktu == '13:00') {
-            $sesi = 'Sesi2';
-        } else {
-            return redirect()->back()->with('error', 'Waktu yang dipilih tidak valid.');
-        }
-
-        // Simpan data booking dengan sesi yang ditentukan
-        $validatedData['sesi'] = $sesi;
-        $booking = Booking::create($validatedData);
-
-        // Ambil dokter berdasarkan id
-        $dokter = Dokter::find($booking->id_dokter);
-
-        // Hitung nomor antrian
-        $total_booking_hari_ini = Booking::where('id_dokter', $booking->id_dokter)
-            ->whereDate('created_at', now())
-            ->count();
-
-        // Data untuk PDF
-        $data = [
-            'dokter' => $dokter,
-            'nomor_antrian' => str_pad($total_booking_hari_ini, 3, '0', STR_PAD_LEFT), // Format nomor antrian menjadi 001, 002, dst.
-        ];
-
-        // Load view dengan data
-        $pdf = PDF::loadView('noantrian', $data);
-
-        // Set ukuran kertas menjadi A6
-        $pdf->setPaper([0, 0, 297.638, 419.528], 'portrait'); // Ukuran A6 dalam satuan points
-
-        // Unduh PDF
-        return $pdf->download('noantrian.pdf');
+    if (!$validatedData['id_pasien']) {
+        return view('/daftar_pasien')->with('error', 'ID pasien tidak ditemukan dalam sesi. Silakan daftar terlebih dahulu.');
     }
+
+    // Tentukan sesi berdasarkan waktu yang dipilih
+    $waktu = $validatedData['waktu'];
+
+    // Tentukan sesi berdasarkan waktu mulai
+    if ($waktu == '08:00') {
+        $sesi = 'Sesi1';
+    } elseif ($waktu == '13:00') {
+        $sesi = 'Sesi2';
+    } else {
+        return redirect()->back()->with('error', 'Waktu yang dipilih tidak valid.');
+    }
+
+    // Simpan data booking dengan sesi yang ditentukan
+    $validatedData['sesi'] = $sesi;
+    $booking = Booking::create($validatedData);
+
+    // Ambil dokter berdasarkan id
+    $dokter = Dokter::find($booking->id_dokter);
+
+    // Ambil pasien berdasarkan id
+    $pasien = Pasien::find($validatedData['id_pasien']);
+
+    // Hitung nomor antrian
+    $total_booking_hari_ini = Booking::where('id_dokter', $booking->id_dokter)
+        ->whereDate('created_at', now())
+        ->count();
+
+    // Data untuk PDF
+    $data = [
+        'dokter' => $dokter,
+        'pasien' => $pasien,
+        'booking' => $booking,
+        'nomor_antrian' => str_pad($total_booking_hari_ini, 3, '0', STR_PAD_LEFT), // Format nomor antrian menjadi 001, 002, dst.
+    ];
+
+    // Load view dengan data
+    $pdf = PDF::loadView('noantrian', $data);
+
+    // Set ukuran kertas menjadi A6
+    $pdf->setPaper([0, 0, 297.638, 419.528], 'portrait'); // Ukuran A6 dalam satuan points
+
+    // Unduh PDF
+    return $pdf->download('noantrian.pdf');
+}
+
 
 
 
