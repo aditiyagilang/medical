@@ -96,6 +96,10 @@
                     <div class="section-tittle text-center mb-100">
                         <span>Next Step</span>
                         <h2>Pilih Waktu Pemeriksaan kamu</h2>
+                        <!-- Tambahkan tombol logout di sini -->
+                        <a href="{{ route('logout') }}" class="genric-btn primary-border circle arrow" style="float:right; margin-top:10px;">
+                            Logout
+                        </a>
                     </div>
                 </div>
             </div>
@@ -116,7 +120,7 @@
 
                             <div class="container box_1170 border-top-generic">
                                 @foreach ($sesi_tersedia as $index => $sesi)
-                                <form action="{{ route('bookings.store') }}" method="POST" style="display:inline;" id="form-{{ $index }}">
+                                <form action="{{ route('bookings.pdf') }}" method="POST" style="display:inline;" id="form-{{ $index }}">
                                     @csrf
                                     <input type="hidden" name="id_dokter" value="{{ $dokter->id }}">
                                     <input type="hidden" name="status" value="confirmed">
@@ -125,10 +129,7 @@
                                         {{ $sesi['mulai'] }}-{{ $sesi['selesai'] }}<span class="lnr lnr-arrow-right"></span>
                                     </a>
                                 </form>
-                            @endforeach
-
-
-
+                                @endforeach
                             </div>
 
                         </div>
@@ -137,6 +138,7 @@
             </div>
         </div>
     </section>
+
     <!-- Doctor Section Begin -->
 </main>
 

@@ -41,6 +41,7 @@ Route::get('/daftar_pasien', function () {
 Route::get('/logins', function () {
     return view('login');
 });
+Route::get('/logout', [UserController::class, 'logout'])->name('logout');
 Route::post('/pasien', [PasienController::class, 'store'])->name('pasien.store');
 Route::get('/dokters/{layanan}', [DokterController::class, 'index']);
 Route::get('/doctor_detail/{id_doctor}', [BookingController::class, 'detail'])->name('doctor.detail');
@@ -58,5 +59,5 @@ Route::delete('/delete/{id}', [PasienController::class, 'delete'])->name('delete
 
 // Route::get('/download-pdf', [BookingController::class, 'generatePdf']);
 
-Route::post('/bookings', [BookingController::class, 'store'])->name('bookings.store');
+Route::post('/bookings', 'App\Http\Controllers\PasienController@antri')->name('bookings.pdf');
 

@@ -2,7 +2,7 @@
 <html lang="en">
     <head>
         <meta charset="UTF-8">
-        <title>No Antrian</title>
+        <title>Klinik Mastrip</title>
         <style>
             body {
                 font-family: 'Times New Roman', Times, serif;

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Data Pasien</title>
+    <title>Klinik Mastrip</title>
     <style>
         table {
             width: 100%;

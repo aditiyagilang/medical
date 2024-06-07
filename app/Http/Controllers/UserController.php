@@ -107,7 +107,7 @@ class UserController extends Controller
     // Debug output untuk validasi data dan hasil bcrypt
 
 
-        // $pass = bcrypt($validatedData->password);
+        // $pass = bcrypt($validatedData['password']);
         // dd($pass);
         $user = User::where('username', $validatedData['username'])->first();
         // dd($hashedPassword, " = " , $user->password);
@@ -118,5 +118,10 @@ class UserController extends Controller
             return back();
         }
 
+    }
+    public function logout(Request $request)
+    {
+        $request->session()->flush();
+        return view('landingpage');
     }
 }

@@ -10,7 +10,7 @@
     <!-- ===============================================-->
     <!--    Document Title-->
     <!-- ===============================================-->
-    <title>Livedoc | Landing, Responsive &amp; Business Templatee</title>
+    <title>klinik Mastrip</title>
 
 
     <!-- ===============================================-->
@@ -81,7 +81,7 @@
             <div class="col-md-5 col-xl-6 col-xxl-7 order-0 order-md-1 text-end"><img class="pt-7 pt-md-0 w-100" src="{{ asset('landingpage/public/assets/img/gallery/hero.png') }}" alt="hero-header" /></div>
             <div class="col-md-75 col-xl-6 col-xxl-5 text-md-start text-center py-6">
               <h1 class="fw-light font-base fs-6 fs-xxl-7">Kami <strong>berkomitmen </strong>untuk<br />meningkatkan kualitas&nbsp;<strong>hidup anda</strong></h1>
-              <p class="fs-1 mb-5">Kesejahteraan Anda adalah prioritas kami, dan kami siap melayani anda dengan ramah dan penuh perhatian<br /> dari para dokter spesialis kami.</p><a class="btn btn-lg btn-primary rounded-pill" href="#!" role="button">Make an Appointment</a>
+              <p class="fs-1 mb-5">Kesejahteraan Anda adalah prioritas kami, dan kami siap melayani anda dengan ramah dan penuh perhatian<br /> dari para dokter spesialis kami.</p><a class="btn btn-lg btn-primary rounded-pill" href="/daftar_pasien" role="button">Make an Appointment</a>
             </div>
           </div>
         </div>
@@ -153,15 +153,27 @@
         <!--/.bg-holder-->
 
         <div class="container">
-          <div class="row align-items-center">
-            <div class="col-md-5 col-xxl-6"><img class="img-fluid" src="{{ asset('landingpage/public/assets/img/gallery/eye-care.png') }}" alt="..." /></div>
-            <div class="col-md-7 col-xxl-6 text-center text-md-start">
-              <h2 class="fw-bold text-light mb-4 mt-4 mt-lg-0">Eye Care with Top Professionals<br class="d-none d-sm-block" />and In Budget.</h2>
-              <p class="text-light">We've built a healthcare system that puts your needs first.<br class="d-none d-sm-block" />For us, there is nothing more important than the health of <br class="d-none d-sm-block" />you and your loved ones. </p>
-              <div class="py-3"><a class="btn btn-lg btn-light rounded-pill" href="#!" role="button">Learn more </a></div>
+            <div class="row align-items-center">
+              <div class="col-md-5 col-xxl-6">
+                <img class="img-fluid" src="{{ asset('landingpage/public/assets/img/gallery/eye-care.png') }}" alt="..." />
+              </div>
+              <div class="col-md-7 col-xxl-6 text-center text-md-start">
+                <h2 class="fw-bold text-light mb-4 mt-4 mt-lg-0">Visi & Misi</h2>
+                <h4 class="fw-bold text-light mb-4 mt-4 mt-lg-0">Visi :</h4>
+                <p class="text-light">Menjadikan Klinik Mastrip sebagai pelayanan kesehatan umum yang terkemuka di wilayah Sumbersari dan mampu bersaing di era globalisasi.</p>
+                <h4 class="fw-bold text-light mb-4 mt-4 mt-lg-0">Misi :</h4>
+                <ul class="text-light">
+                  <li>Pelayanan yang ramah dan profesional</li>
+                  <li>Meningkatkan mutu pelayanan</li>
+                  <li>Konsisten kepada pelayanan yang professional</li>
+                </ul>
+                <div class="py-3">
+                  <a class="btn btn-lg btn-light rounded-pill" href="/" role="button">Learn more</a>
+                </div>
+              </div>
             </div>
           </div>
-        </div>
+
       </section>
 
 

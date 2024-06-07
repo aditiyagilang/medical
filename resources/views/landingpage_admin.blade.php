@@ -10,7 +10,7 @@
     <!-- ===============================================-->
     <!--    Document Title-->
     <!-- ===============================================-->
-    <title>Livedoc | Landing, Responsive &amp; Business Templatee</title>
+    <title>Klinik Mastrip</title>
 
 
     <!-- ===============================================-->
@@ -82,7 +82,7 @@
             <div class="col-md-5 col-xl-6 col-xxl-7 order-0 order-md-1 text-end"><img class="pt-7 pt-md-0 w-100" src="{{ asset('landingpage/public/assets/img/gallery/hero.png') }}" alt="hero-header" /></div>
             <div class="col-md-75 col-xl-6 col-xxl-5 text-md-start text-center py-6">
               <h1 class="fw-light font-base fs-6 fs-xxl-7">Kami <strong>berkomitmen </strong>untuk<br />meningkatkan kualitas&nbsp;<strong>hidup anda</strong></h1>
-              <p class="fs-1 mb-5">Kesejahteraan Anda adalah prioritas kami, dan kami siap melayani anda dengan ramah dan penuh perhatian<br /> dari para dokter spesialis kami.</p><a class="btn btn-lg btn-primary rounded-pill" href="#!" role="button">Make an Appointment</a>
+              <p class="fs-1 mb-5">Kesejahteraan Anda adalah prioritas kami, dan kami siap melayani anda dengan ramah dan penuh perhatian<br /> dari para dokter spesialis kami.</p><a class="btn btn-lg btn-primary rounded-pill" href="/logins" role="button">Make an Appointment</a>
             </div>
           </div>
         </div>
