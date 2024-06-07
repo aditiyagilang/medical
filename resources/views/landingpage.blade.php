@@ -210,9 +210,7 @@
             <div class="col-md-6 text-center text-md-start">
               <h2 class="fw-bold mb-4">Tentang Klinik Mastrip</h2>
               <p>Klinik Mastrip saat ini berkedudukan di Jl. Mastrip No.164, Krajan Timur, Sumbersari, Kec. Sumbersari, Kabupaten Jember, Jawa Timur. Klinik ini didirikan dengan tujuan memberikan pelayanan kesehatan bagi masyarakat sekitar. Pelayanan kesehatan diberikan, berkaitan dengan mutu dan berorientasi pada kepuasan pasien yang berdasarkan standart kualitas pasien, sehingga pasien dapat memperoleh kepuasan yang akhirnya dapat meningkatkan mutu dan kepercayaan terhadap Klinik. </p>
-              <div class="py-3">
-                <button class="btn btn-lg btn-outline-primary rounded-pill" type="submit">Learn more </button>
-              </div>
+             
             </div>
           </div>
         </div>
