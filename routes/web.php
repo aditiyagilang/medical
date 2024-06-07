@@ -42,6 +42,7 @@ Route::get('/logins', function () {
     return view('login');
 });
 Route::get('/logout', [UserController::class, 'logout'])->name('logout');
+Route::get('/logouts', [UserController::class, 'logouts'])->name('logouts');
 Route::post('/pasien', [PasienController::class, 'store'])->name('pasien.store');
 Route::get('/dokters/{layanan}', [DokterController::class, 'index']);
 Route::get('/doctor_detail/{id_doctor}', [BookingController::class, 'detail'])->name('doctor.detail');

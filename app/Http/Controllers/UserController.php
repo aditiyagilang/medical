@@ -124,4 +124,9 @@ class UserController extends Controller
         $request->session()->flush();
         return view('landingpage');
     }
+    public function logouts(Request $request)
+    {
+        $request->session()->flush();
+        return view('landingpage_admin');
+    }
 }

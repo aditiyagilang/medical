@@ -142,7 +142,7 @@
 
     <footer>
         <!--? Footer Start-->
-        <div class="footer-area section-bg" data-background="{{ asset('assets/img/gallery/footer') }}_bg.jpg">
+        <div class="footer-area section-bg" data-background="{{ asset('assets/img/gallery/footer_bg.jpg') }}">
             <div class="container">
                 <div class="footer-top footer-padding">
                     <div class="row d-flex justify-content-between">
@@ -150,7 +150,7 @@
                             <div class="single-footer-caption mb-50">
                                 <!-- logo -->
                                 <div class="footer-logo">
-                                    <a href="index.php"><img src="{{ asset('assets/img/logo/logo2_foo') }}ter.png" alt=""></a>
+                                    <a href="index.php"><img src="{{ asset('assets/img/logo/logofix.png') }}" alt=""></a>
                                 </div>
                             </div>
                         </div>
@@ -159,8 +159,10 @@
                                 <div class="footer-tittle">
                                     <h4>About Us</h4>
                                     <div class="footer-pera">
-                                        <p class="info1">Lorem igpsum doldfor sit amet, adipiscing elit, sed do eiusmod tempor cergelit rgh. </p>
-                                        <p class="info1">Lorem ipsum dolor sit amet, adipiscing elit.</p>
+                                        <p class="info1">E-Klinik Mastrip adalah website booking layanan klinik andalan kita<br></p>
+                                        <p class="info1">Contact Us +62 822 2433 2222<br>
+                                            E-Klinik.Mastrip.id<br>
+                                            Jl. Mastrip No.164, Krajan Timur, Sumbersari, Kec. Sumbersari, Kabupaten Jember, Jawa Timur</p>
                                     </div>
                                 </div>
                             </div>
@@ -168,8 +170,8 @@
                         <div class="col-xl-4 col-lg-4 col-md-6 col-sm-8">
                             <div class="single-footer-caption mb-50">
                                 <div class="footer-number mb-50">
-                                    <h4><span>+564 </span>7885 3222</h4>
-                                    <p>youremail@gmail.com</p>
+                                    <h4><span>+62 </span>8222433 2222</h4>
+                                    <p>E-klinik.Mastrip.id</p>
                                 </div>
                                 <!-- Form -->
                                 <div class="footer-form">

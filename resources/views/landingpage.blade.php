@@ -63,8 +63,7 @@
             <li class="nav-item px-2"><a class="nav-link" aria-current="page" href="#home">Home</a></li>
             <li class="nav-item px-2"><a class="nav-link" href="#about">About Us</a></li>
             <li class="nav-item px-2"><a class="nav-link" href="#departments">Layanan</a></li>
-            <li class="nav-item px-2"><a class="nav-link" href="#dokter">Dokter</a></li>
-            <li class="nav-item px-2"><a class="nav-link" href="#review">Review</a></li>
+            <li class="nav-item px-2"><a class="nav-link" href="#contact">Contact</a></li>
           </ul>
           <a class="btn btn-sm btn-outline-primary rounded-pill order-1 order-lg-0 ms-lg-4" href="/daftar_pasien">Daftar</a>
         </div>
@@ -77,14 +76,18 @@
         <!--/.bg-holder-->
 
         <div class="container">
-          <div class="row min-vh-xl-100 min-vh-xxl-25">
-            <div class="col-md-5 col-xl-6 col-xxl-7 order-0 order-md-1 text-end"><img class="pt-7 pt-md-0 w-100" src="{{ asset('landingpage/public/assets/img/gallery/hero.png') }}" alt="hero-header" /></div>
-            <div class="col-md-75 col-xl-6 col-xxl-5 text-md-start text-center py-6">
-              <h1 class="fw-light font-base fs-6 fs-xxl-7">Kami <strong>berkomitmen </strong>untuk<br />meningkatkan kualitas&nbsp;<strong>hidup anda</strong></h1>
-              <p class="fs-1 mb-5">Kesejahteraan Anda adalah prioritas kami, dan kami siap melayani anda dengan ramah dan penuh perhatian<br /> dari para dokter spesialis kami.</p><a class="btn btn-lg btn-primary rounded-pill" href="/daftar_pasien" role="button">Make an Appointment</a>
+            <div class="row min-vh-xl-100 min-vh-xxl-25">
+              <div class="col-md-5 col-xl-6 col-xxl-7 order-0 order-md-1 text-end d-flex justify-content-center align-items-start pt-3">
+                <img class="pt-7 pt-md-0 rounded-circle" src="{{ asset('landingpage/public/assets/img/favicons/gambar_aboutus.jpg') }}" alt="hero-header" style="width: 300px; height: 300px; object-fit: cover;" />
+              </div>
+              <div class="col-md-7 col-xl-6 col-xxl-5 text-md-start text-center py-3 d-flex align-items-start" style="padding-top: 1rem;">
+                <div>
+                  <h1 class="fw-light font-base fs-6 fs-xxl-7">Kami <strong>berkomitmen </strong>untuk<br />meningkatkan kualitas&nbsp;<strong>hidup anda</strong></h1>
+                  <p class="fs-1 mb-5">Kesejahteraan Anda adalah prioritas kami, dan kami siap melayani anda dengan ramah dan penuh perhatian<br /> dari para dokter spesialis kami.</p>
+                </div>
+              </div>
             </div>
           </div>
-        </div>
       </section>
 
 
@@ -105,14 +108,6 @@
         <!-- end of .container-->
 
       </section>
-      <!-- <section> close ============================-->
-      <!-- ============================================-->
-
-
-
-
-      <!-- ============================================-->
-      <!-- <section> begin ============================-->
       <section class="py-0">
 
         <div class="container">
@@ -155,7 +150,7 @@
         <div class="container">
             <div class="row align-items-center">
               <div class="col-md-5 col-xxl-6">
-                <img class="img-fluid" src="{{ asset('landingpage/public/assets/img/gallery/eye-care.png') }}" alt="..." />
+                <img class="img-fluid" src="{{ asset('landingpage/public/assets/img/favicons/gambar_visimisi.jpg') }}" alt="..." />
               </div>
               <div class="col-md-7 col-xxl-6 text-center text-md-start">
                 <h2 class="fw-bold text-light mb-4 mt-4 mt-lg-0">Visi & Misi</h2>
@@ -167,9 +162,6 @@
                   <li>Meningkatkan mutu pelayanan</li>
                   <li>Konsisten kepada pelayanan yang professional</li>
                 </ul>
-                <div class="py-3">
-                  <a class="btn btn-lg btn-light rounded-pill" href="/" role="button">Learn more</a>
-                </div>
               </div>
             </div>
           </div>
@@ -206,311 +198,66 @@
 
         <div class="container">
           <div class="row align-items-center">
-            <div class="col-md-6 order-lg-1 mb-5 mb-lg-0"><img class="fit-cover rounded-circle w-100" src="{{ asset('landingpage/public/assets/img/gallery/health-care.png') }}" alt="..." /></div>
+            <div class="col-md-6 order-lg-1 mb-5 mb-lg-0"><img class="fit-cover rounded-circle w-100" src="{{ asset('landingpage/public/assets/img/favicons/gambar_aboutus.jpg') }}" alt="..." /></div>
             <div class="col-md-6 text-center text-md-start">
               <h2 class="fw-bold mb-4">Tentang Klinik Mastrip</h2>
               <p>Klinik Mastrip saat ini berkedudukan di Jl. Mastrip No.164, Krajan Timur, Sumbersari, Kec. Sumbersari, Kabupaten Jember, Jawa Timur. Klinik ini didirikan dengan tujuan memberikan pelayanan kesehatan bagi masyarakat sekitar. Pelayanan kesehatan diberikan, berkaitan dengan mutu dan berorientasi pada kepuasan pasien yang berdasarkan standart kualitas pasien, sehingga pasien dapat memperoleh kepuasan yang akhirnya dapat meningkatkan mutu dan kepercayaan terhadap Klinik. </p>
-             
+
             </div>
           </div>
         </div>
       </section>
 
 
-      <!-- ============================================-->
-      <!-- <section> begin ============================-->
-      <section class="pb-0" id="dokter">
-
-        <div class="container">
-          <div class="row">
-            <div class="col-12 py-3">
-              <div class="bg-holder bg-size" style="background-image:url('{{ asset('landingpage/public/assets/img/gallery/doctors-us.png') }}');background-position:top center;background-size:contain;">
-              </div>
-              <!--/.bg-holder-->
-
-              <h1 class="text-center">Dokter Kami</h1>
-            </div>
-          </div>
-        </div>
-        <!-- end of .container-->
-
-      </section>
-      <!-- <section> close ============================-->
-      <!-- ============================================-->
-
-
-      <section class="py-5">
-        <div class="bg-holder bg-size" style="background-image:url('{{ asset('landingpage/public/assets/img/gallery/doctors-bg.png') }}');background-position:top center;background-size:contain;">
-        </div>
-        <!--/.bg-holder-->
-
-        <div class="container">
-          <div class="row flex-center">
-            <div class="col-xl-10 px-0">
-              <div class="carousel slide" id="carouselExampleDark" data-bs-ride="carousel"><a class="carousel-control-prev carousel-icon z-index-2" href="#carouselExampleDark" role="button" data-bs-slide="prev"><span class="carousel-control-prev-icon" aria-hidden="true"></span><span class="visually-hidden">Previous</span></a><a class="carousel-control-next carousel-icon z-index-2" href="#carouselExampleDark" role="button" data-bs-slide="next"><span class="carousel-control-next-icon" aria-hidden="true"></span><span class="visually-hidden">Next</span></a>
-                <div class="carousel-inner">
-                  <div class="carousel-item active" data-bs-interval="10000">
-                    <div class="row h-100 m-lg-7 mx-3 mt-6 mx-md-4 my-md-7">
-                      <div class="col-md-4 mb-8 mb-md-0">
-                        <div class="card card-span h-100 shadow">
-                          <div class="card-body d-flex flex-column flex-center py-5"><img src="{{ asset('landingpage/public/assets/img/gallery/anita.png') }}" width="128" alt="..." />
-                            <h5 class="mt-3">Anita Deshai</h5>
-                            <p class="mb-0 fs-xxl-1">Pediatrics, Gochi Medicine</p>
-                            <p class="text-600 mb-0">Florida, United States</p>
-                            <p class="text-600 mb-4">10 years experience</p>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="col-md-4 mb-8 mb-md-0">
-                        <div class="card card-span h-100 shadow">
-                          <div class="card-body d-flex flex-column flex-center py-5"><img src="{{ asset('landingpage/public/assets/img/gallery/jane.png') }}" width="128" alt="..." />
-                            <h5 class="mt-3">Jane Flakis</h5>
-                            <p class="mb-0 fs-xxl-1">Gynaecology, Abenka Care</p>
-                            <p class="text-600 mb-0">Melbourne, Australia</p>
-                            <p class="text-600 mb-4">12 years experience</p>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="col-md-4 mb-8 mb-md-0">
-                        <div class="card card-span h-100 shadow">
-                          <div class="card-body d-flex flex-column flex-center py-5"><img src="{{ asset('landingpage/public/assets/img/gallery/leo-mario.png') }}" width="128" alt="..." />
-                            <h5 class="mt-3">Leo Mario</h5>
-                            <p class="mb-0 fs-xxl-1">Physiotherapy, FitCare</p>
-                            <p class="text-600 mb-0">London, England</p>
-                            <p class="text-600 mb-4">25 years experience</p>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="carousel-item" data-bs-interval="2000">
-                    <div class="row h-100 m-lg-7 mx-3 mt-6 mx-md-4 my-md-7">
-                      <div class="col-md-4 mb-8 mb-md-0">
-                        <div class="card card-span h-100 shadow">
-                          <div class="card-body d-flex flex-column flex-center py-5"><img src="{{ asset('landingpage/public/assets/img/gallery/anita.png') }}" width="128" alt="..." />
-                            <h5 class="mt-3">Anita Deshai</h5>
-                            <p class="mb-0 fs-xxl-1">Pediatrics, Gochi Medicine</p>
-                            <p class="text-600 mb-0">Florida, United States</p>
-                            <p class="text-600 mb-4">10 years experience</p>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="col-md-4 mb-8 mb-md-0">
-                        <div class="card card-span h-100 shadow">
-                          <div class="card-body d-flex flex-column flex-center py-5"><img src="{{ asset('landingpage/public/assets/img/gallery/jane.png') }}" width="128" alt="..." />
-                            <h5 class="mt-3">Jane Flakis</h5>
-                            <p class="mb-0 fs-xxl-1">Gynaecology, Abenka Care</p>
-                            <p class="text-600 mb-0">Melbourne, Australia</p>
-                            <p class="text-600 mb-4">12 years experience</p>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="col-md-4 mb-8 mb-md-0">
-                        <div class="card card-span h-100 shadow">
-                          <div class="card-body d-flex flex-column flex-center py-5"><img src="{{ asset('landingpage/public/assets/img/gallery/leo-mario.png') }}" width="128" alt="..." />
-                            <h5 class="mt-3">Leo Mario</h5>
-                            <p class="mb-0 fs-xxl-1">Physiotherapy, FitCare</p>
-                            <p class="text-600 mb-0">London, England</p>
-                            <p class="text-600 mb-4">25 years experience</p>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="carousel-item">
-                    <div class="row h-100 m-lg-7 mx-3 mt-6 mx-md-4 my-md-7">
-                      <div class="col-md-4 mb-8 mb-md-0">
-                        <div class="card card-span h-100 shadow">
-                          <div class="card-body d-flex flex-column flex-center py-5"><img src="{{ asset('landingpage/public/assets/img/gallery/anita.png') }}" width="128" alt="..." />
-                            <h5 class="mt-3">Anita Deshai</h5>
-                            <p class="mb-0 fs-xxl-1">Pediatrics, Gochi Medicine</p>
-                            <p class="text-600 mb-0">Florida, United States</p>
-                            <p class="text-600 mb-4">10 years experience</p>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="col-md-4 mb-8 mb-md-0">
-                        <div class="card card-span h-100 shadow">
-                          <div class="card-body d-flex flex-column flex-center py-5"><img src="{{ asset('landingpage/public/assets/img/gallery/jane.png') }}" width="128" alt="..." />
-                            <h5 class="mt-3">Jane Flakis</h5>
-                            <p class="mb-0 fs-xxl-1">Gynaecology, Abenka Care</p>
-                            <p class="text-600 mb-0">Melbourne, Australia</p>
-                            <p class="text-600 mb-4">12 years experience</p>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="col-md-4 mb-8 mb-md-0">
-                        <div class="card card-span h-100 shadow">
-                          <div class="card-body d-flex flex-column flex-center py-5"><img src="{{ asset('landingpage/public/assets/img/gallery/leo-mario.png') }}" width="128" alt="..." />
-                            <h5 class="mt-3">Leo Mario</h5>
-                            <p class="mb-0 fs-xxl-1">Physiotherapy, FitCare</p>
-                            <p class="text-600 mb-0">London, England</p>
-                            <p class="text-600 mb-4">25 years experience</p>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-
-      <!-- ============================================-->
-      <!-- <section> begin ============================-->
-      <section class="py-5" id="review">
-
-        <div class="container">
-          <div class="row">
-            <div class="col-12 py-3">
-              <div class="bg-holder bg-size" style="background-image:url('{{ asset('landingpage/public/assets/img/gallery/people.png') }}');background-position:top center;background-size:contain;">
-              </div>
-              <!--/.bg-holder-->
-
-              <h1 class="text-center">Review Client</h1>
-            </div>
-          </div>
-        </div>
-        <!-- end of .container-->
-
-      </section>
-      <!-- <section> close ============================-->
-      <!-- ============================================-->
-
-
-      <section class="py-8">
-        <div class="bg-holder bg-size" style="background-image:url('{{ asset('landingpage/public/assets/img/gallery/people-bg-1.png') }}');background-position:center;background-size:cover;">
-        </div>
-        <!--/.bg-holder-->
-
-        <div class="container">
-          <div class="row align-items-center offset-sm-1">
-            <div class="carousel slide" id="carouselPeople" data-bs-ride="carousel">
-              <div class="carousel-inner">
-                <div class="carousel-item active" data-bs-interval="10000">
-                  <div class="row h-100">
-                    <div class="col-sm-3 text-center"><img src="{{ asset('landingpage/public/assets/img/gallery/people-who-loves.png') }}" width="100" alt="" />
-                      <h5 class="mt-3 fw-medium text-secondary">Edward Newgate</h5>
-                      <p class="fw-normal mb-0">Founder Circle</p>
-                    </div>
-                    <div class="col-sm-9 text-center text-sm-start pt-3 pt-sm-0">
-                      <h2>Fantastic Response!</h2>
-                      <div class="my-2"><i class="fas fa-star me-2"></i><i class="fas fa-star me-2"></i><i class="fas fa-star me-2"></i><i class="fas fa-star-half-alt me-2"></i><i class="far fa-star"></i></div>
-                      <p>This medical and health care facility distinguishes itself from the competition by providing technologically advanced medical and health care. A mobile app and a website are available via which you can easily schedule appointments, get online consultations, and see physicians, who will assist you through the whole procedure. And all of the prescriptions, medications, and other services they offer are 100% genuine, medically verified, and proved. I believe that the Livedoc staff is doing an outstanding job. Highly recommended their health care services.</p>
-                    </div>
-                  </div>
-                </div>
-                <div class="carousel-item" data-bs-interval="2000">
-                  <div class="row h-100">
-                    <div class="col-sm-3 text-center"><img src="{{ asset('landingpage/public/assets/img/gallery/people-who-loves.png') }}" width="100" alt="" />
-                      <h5 class="mt-3 fw-medium text-secondary">Jhon Doe</h5>
-                      <p class="fw-normal mb-0">UI/UX Designer</p>
-                    </div>
-                    <div class="col-sm-9 text-center text-sm-start pt-3 pt-sm-0">
-                      <h2>Fantastic Response!</h2>
-                      <div class="my-2"><i class="fas fa-star me-2"></i><i class="fas fa-star me-2"></i><i class="fas fa-star me-2"></i><i class="fas fa-star-half-alt me-2"></i><i class="far fa-star"></i></div>
-                      <p>This medical and health care facility distinguishes itself from the competition by providing technologically advanced medical and health care. A mobile app and a website are available via which you can easily schedule appointments, get online consultations, and see physicians, who will assist you through the whole procedure. And all of the prescriptions, medications, and other services they offer are 100% genuine, medically verified, and proved. I believe that the Livedoc staff is doing an outstanding job. Highly recommended their health care services.</p>
-                    </div>
-                  </div>
-                </div>
-                <div class="carousel-item">
-                  <div class="row h-100">
-                    <div class="col-sm-3 text-center"><img src="{{ asset('landingpage/public/assets/img/gallery/people-who-loves.png') }}" width="100" alt="" />
-                      <h5 class="mt-3 fw-medium text-secondary">Jeny Doe</h5>
-                      <p class="fw-normal mb-0">Web Designer</p>
-                    </div>
-                    <div class="col-sm-9 text-center text-sm-start pt-3 pt-sm-0">
-                      <h2>Fantastic Response!</h2>
-                      <div class="my-2"><i class="fas fa-star me-2"></i><i class="fas fa-star me-2"></i><i class="fas fa-star me-2"></i><i class="fas fa-star-half-alt me-2"></i><i class="far fa-star"></i></div>
-                      <p>This medical and health care facility distinguishes itself from the competition by providing technologically advanced medical and health care. A mobile app and a website are available via which you can easily schedule appointments, get online consultations, and see physicians, who will assist you through the whole procedure. And all of the prescriptions, medications, and other services they offer are 100% genuine, medically verified, and proved. I believe that the Livedoc staff is doing an outstanding job. Highly recommended their health care services.</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="row">
-                <div class="position-relative z-index-2 mt-5">
-                  <ol class="carousel-indicators">
-                    <li class="active" data-bs-target="#carouselPeople" data-bs-slide-to="0"></li>
-                    <li data-bs-target="#carouselPeople" data-bs-slide-to="1"></li>
-                    <li data-bs-target="#carouselPeople" data-bs-slide-to="2"> </li>
-                  </ol>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section class="bg-primary">
-        <div class="bg-holder bg-size" style="background-image:url('{{ asset('landingpage/public/assets/img/gallery/cta-bg.png') }}');background-position:center right;margin-top:-8.125rem;background-size:contain;">
-        </div>
-        <!--/.bg-holder-->
-
-        <div class="container">
-          <div class="row">
-            <div class="col-lg-6">
-              <h2 class="fw-bold text-light">Get an update every week</h2>
-              <p class="text-soft-primary">Livedoc was created in order to improve the patient experience. <br />Providing world-class tests, and a wide range of other services.</p>
-            </div>
-            <div class="col-lg-6">
-              <h5 class="mb-3 text-soft-primary">SUBSCRIBE TO NEWSLETTER </h5>
-              <form class="row gx-2 gy-2 align-items-center">
-                <div class="col">
-                  <div class="input-group-icon">
-                    <label class="visually-hidden" for="inputEmailCta">Address</label>
-                    <input class="form-control form-livedoc-control form-cta-control text-soft-primary" id="inputEmailCta" type="email" placeholder="Email" />
-                  </div>
-                </div>
-                <div class="d-grid gap-3 col-sm-auto">
-                  <button class="btn btn-lg btn-light rounded-3 px-5 py-3" type="submit">Subscribe</button>
-                </div>
-              </form>
-            </div>
-          </div>
-        </div>
-      </section>
-      <section class="py-0 bg-secondary">
+      <section class="py-0 bg-secondary"id="contact">
         <div class="bg-holder opacity-25" style="background-image:url('{{ asset('landingpage/public/assets/img/gallery/dot-bg.png') }}');background-position:top left;margin-top:-3.125rem;background-size:auto;">
         </div>
         <!--/.bg-holder-->
 
         <div class="container">
-          <div class="row py-8">
-            <div class="col-12 col-sm-12 col-lg-6 mb-4 order-0 order-sm-0"><a class="text-decoration-none" href="#"><img src="{{ asset('landingpage/public/assets/img/gallery/footer-logo.png') }}" height="51" alt="" /></a>
-              <p class="text-light my-4">The world's most trusted <br />telehealth company.</p>
-            </div>
-            <div class="col-6 col-sm-4 col-lg-2 mb-3 order-2 order-sm-1">
-              <h5 class="lh-lg fw-bold mb-4 text-light font-sans-serif">Departments</h5>
-              <ul class="list-unstyled mb-md-4 mb-lg-0">
-                <li class="lh-lg"><a class="footer-link" href="#!">Eye care</a></li>
-                <li class="lh-lg"><a class="footer-link" href="#!">Cardiac are</a></li>
-                <li class="lh-lg"><a class="footer-link" href="#!">Heart care</a></li>
-              </ul>
-            </div>
-            <div class="col-6 col-sm-4 col-lg-2 mb-3 order-3 order-sm-2">
-              <h5 class="lh-lg fw-bold text-light mb-4 font-sans-serif">Membership</h5>
-              <ul class="list-unstyled mb-md-4 mb-lg-0">
-                <li class="lh-lg"><a class="footer-link" href="#!">Free trial</a></li>
-                <li class="lh-lg"><a class="footer-link" href="#!">Silver</a></li>
-                <li class="lh-lg"><a class="footer-link" href="#!">Premium</a></li>
-              </ul>
-            </div>
-            <div class="col-6 col-sm-4 col-lg-2 mb-3 order-3 order-sm-2">
-              <h5 class="lh-lg fw-bold text-light mb-4 font-sans-serif"> Customer Care</h5>
-              <ul class="list-unstyled mb-md-4 mb-lg-0">
-                <li class="lh-lg"><a class="footer-link" href="#!">About Us</a></li>
-                <li class="lh-lg"><a class="footer-link" href="#!">Contact US</a></li>
-                <li class="lh-lg"><a class="footer-link" href="#!">Get Update</a></li>
-              </ul>
+            <div class="row py-8">
+              <div class="col-12 mb-4">
+                <h2 class="text-light text-center">Contact Us</h2>
+              </div>
+              <div class="col-2 col-sm-12 col-lg-6 mb-4 order-0 order-sm-0 d-flex align-items-start flex-column">
+                <div class="container mb-4" style="width: 500px; height: 300px; overflow: hidden; position: relative;">
+                  <a class="text-decoration-none" href="#">
+                    <img src="{{ asset('landingpage/public/assets/img/gallery/logofix.png') }}" style="width: auto; height: 500px; position: absolute; top: 80%; left: 50%; transform: translate(-50%, -50%); object-fit: cover;" alt="" />
+                  </a>
+                </div>
+                <div class="d-flex align-items-start" style="margin-bottom: 20px;">
+                  <div class="container me-3" style="width: 150px; height: 150px; overflow: hidden; position: relative;">
+                    <a class="text-decoration-none" href="#">
+                      <img src="{{ asset('landingpage/public/assets/img/favicons/kemenkes.png') }}" style="width: 150px; height: auto; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); object-fit: cover;" alt="small-image-1" />
+                    </a>
+                  </div>
+                  <div class="container me-3" style="width: 150px; height: 150px; overflow: hidden; position: relative;">
+                    <a class="text-decoration-none" href="#">
+                      <img src="{{ asset('landingpage/public/assets/img/favicons/bpjs.png') }}" style="width: 150px; height: auto; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); object-fit: cover;" alt="small-image-2" />
+                    </a>
+                  </div>
+                  <div class="container" style="width: 150px; height: 150px; overflow: hidden; position: relative;">
+                    <a class="text-decoration-none" href="#">
+                      <img src="{{ asset('landingpage/public/assets/img/favicons/germas.png') }}" style="width: 150px; height: auto; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); object-fit: cover;" alt="small-image-3" />
+                    </a>
+                  </div>
+                </div>
+              </div>
+              <div class="col-10 col-sm-12 col-lg-6 mb-4 order-0 order-sm-0 d-flex align-items-start">
+                <div class="text-light ms-3 align-self-start" style="margin-top: 160px;">
+                  <p class="my-4" style="margin-top: 50px; margin-bottom: 0;">
+                    E-Klinik Mastrip adalah website booking layanan klinik andalan kita<br>
+                    Contact Us +62 822 2433 2222<br>
+                    E-Klinik.Mastrip.id<br>
+                    Jl. Mastrip No.164, Krajan Timur, Sumbersari, Kec. Sumbersari, Kabupaten Jember, Jawa Timur
+                  </p>
+                </div>
+              </div>
             </div>
           </div>
-        </div>
+      </section>
 
 
-        <!-- ============================================-->
         <!-- <section> begin ============================-->
         <section class="py-0 bg-primary">
 
@@ -531,19 +278,8 @@
           <!-- end of .container-->
 
         </section>
-        <!-- <section> close ============================-->
-        <!-- ============================================-->
-
-
       </section>
     </main>
-    <!-- ===============================================-->
-    <!--    End of Main Content-->
-    <!-- ===============================================-->
-
-
-
-
     <!-- ===============================================-->
     <!--    JavaScripts-->
     <!-- ===============================================-->
