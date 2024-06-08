@@ -21,7 +21,10 @@
 	<link rel="stylesheet" href="{{ asset('assets/css/slick.css') }}">
 	<link rel="stylesheet" href="{{ asset('assets/css/nice-select.css') }}">
 	<link rel="stylesheet" href="{{ asset('assets/css/style.css') }}">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@10/dist/sweetalert2.min.css">
+
 </head>
+
 <style>
      .dept_main_info .dep-btn {
         display: inline-block;
@@ -37,6 +40,30 @@
         background-color: #0056b3;
     }
 </style>
+<body>
+    @if ($success)
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            Swal.fire({
+                icon: 'success',
+                title: 'Success',
+                text: 'Data pasien berhasil disimpan.'
+            });
+        });
+    </script>
+@endif
+
+@if (session('error'))
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            Swal.fire({
+                icon: 'error',
+                title: 'Error',
+                text: "{{ session('error') }}"
+            });
+        });
+    </script>
+@endif
     <!--? Preloader Start -->
     <div id="preloader-active">
         <div class="preloader d-flex align-items-center justify-content-center">
@@ -287,6 +314,6 @@
     <!-- Jquery Plugins, main Jquery -->
     <script src="{{ asset('./assets/js/plugins.js')}}"></script>
     <script src="{{ asset('./assets/js/main.js')}}"></script>
-
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10/dist/sweetalert2.all.min.js"></script> 
     </body>
 </html>

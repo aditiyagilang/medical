@@ -113,18 +113,22 @@ class PasienController extends Controller
     }
 
 
-
     public function layanan()
     {
-        // Cek apakah ID pasien ada di sesi
+        // Check if patient ID is in session
         if (session()->has('pasien_id')) {
-            // Jika ada, arahkan ke view layanan
-            return view('layanan');
+            // Get the success flag from the query parameter
+            $success = request()->query('success') === 'true';
+
+            // Pass the success flag to the view
+            return view('layanan', ['success' => $success]);
         } else {
-            // Jika tidak ada, arahkan kembali ke halaman daftar_pasien
+            // Redirect to registration page if patient ID is not in session
             return redirect('/daftar_pasien')->with('error', 'Anda harus mendaftar terlebih dahulu.');
         }
     }
+
+
 
 
 
@@ -194,49 +198,51 @@ class PasienController extends Controller
 
 
 
-    public function store(Request $request)
-    {
-        try {
-            $validatedData = $request->validate([
-                'nik' => 'required|unique:pasien,NIK',
-                'email' => 'required|email',
-                'name' => 'required|string|max:255',
-                'gender' => 'required|in:laki laki,perempuan',
-                'dob' => 'required|date',
-                'phone' => 'required|string|max:15',
-                'alamat' => 'required|string',
-                'riwayat' => 'required|string',
-            ]);
+public function store(Request $request)
+{
+    try {
+        $validatedData = $request->validate([
+            'nik' => 'required|unique:pasien,NIK',
+            'email' => 'required|email',
+            'name' => 'required|string|max:255',
+            'gender' => 'required|in:laki laki,perempuan',
+            'dob' => 'required|date',
+            'phone' => 'required|string|max:15',
+            'alamat' => 'required|string',
+            'riwayat' => 'required|string',
+        ]);
 
-            // Insert data into Pasien table
-            $pasien = Pasien::create([
-                'NIK' => $validatedData['nik'],
-                'email' => $validatedData['email'],
-                'nama' => $validatedData['name'],
-                'gender' => $validatedData['gender'],
-                'tanggal_lahir' => $validatedData['dob'],
-                'no_hp' => $validatedData['phone'],
-                'alamat' => $validatedData['alamat'],
-            ]);
+        // Insert data into Pasien table
+        $pasien = Pasien::create([
+            'NIK' => $validatedData['nik'],
+            'email' => $validatedData['email'],
+            'nama' => $validatedData['name'],
+            'gender' => $validatedData['gender'],
+            'tanggal_lahir' => $validatedData['dob'],
+            'no_hp' => $validatedData['phone'],
+            'alamat' => $validatedData['alamat'],
+        ]);
 
+        // Insert data into RiwayatPenyakit table
+        RiwayatPenyakit::create([
+            'pasien_id' => $pasien->id,
+            'riwayat_penyakit' => $validatedData['riwayat'],
+        ]);
 
-            // Insert data into RiwayatPenyakit table
-            RiwayatPenyakit::create([
-                'pasien_id' => $pasien->id,
-                'riwayat_penyakit' => $validatedData['riwayat'],
-            ]);
-            // $pass =bcrpyt($validatedData['alamat']);
-            // Save pasien ID to session
-            session()->put('pasien_id', $pasien->id);
-            // dd($pass);
+        // Save pasien ID to session
+        session()->put('pasien_id', $pasien->id);
 
-            return redirect('/layanan')->with('success', 'Data pasien berhasil disimpan.');
-        } catch (ValidationException $e) {
-            return redirect()->back()->withInput()->with('error', 'NIK sudah terdaftar.');
-        } catch (QueryException $e) {
-            return redirect()->back()->withInput()->with('error', 'Gagal menambahkan data.');
-        }
+        // Redirect with success flag
+        return redirect('/layanan?success=true');
+    } catch (ValidationException $e) {
+        return redirect()->back()->withInput()->with('error', 'NIK sudah terdaftar.');
+    } catch (QueryException $e) {
+        return redirect()->back()->withInput()->with('error', 'Gagal menambahkan data.');
     }
+}
+
+
+
 
 
     public function show(Pasien $pasien)

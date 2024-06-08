@@ -65,7 +65,7 @@
             <li class="nav-item px-2"><a class="nav-link" href="#departments">Layanan</a></li>
             <li class="nav-item px-2"><a class="nav-link" href="#contact">Contact</a></li>
           </ul>
-          <a class="btn btn-sm btn-outline-primary rounded-pill order-1 order-lg-0 ms-lg-4" href="/logins">Sing In</a>
+          <a class="btn btn-sm btn-outline-primary rounded-pill order-1 order-lg-0 ms-lg-4" href="/logins">Sign In</a>
         </div>
       </div>
     </nav>

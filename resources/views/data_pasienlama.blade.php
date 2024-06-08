@@ -93,11 +93,11 @@
                             <div class="form-group">
                                 <label>Gender:</label><br>
                                 <div class="form-check form-check-inline">
-                                    <input class="form-check-input" type="radio" name="gender" id="male" value="male" {{ $pasien->gender == 'laki laki' ? 'checked' : '' }} disabled>
+                                    <input class="form-check-input" type="radio" name="gender" id="male" value="laki laki" {{ $pasien->gender == 'laki laki' ? 'checked' : '' }} disabled>
                                     <label class="form-check-label" for="male">Male</label>
                                 </div>
                                 <div class="form-check form-check-inline">
-                                    <input class="form-check-input" type="radio" name="gender" id="female" value="female" {{ $pasien->gender == 'perempun' ? 'checked' : '' }} disabled>
+                                    <input class="form-check-input" type="radio" name="gender" id="female" value="perempuan" {{ $pasien->gender == 'perempuan' ? 'checked' : '' }} disabled>
                                     <label class="form-check-label" for="female">Female</label>
                                 </div>
                             </div>

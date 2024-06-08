@@ -22,6 +22,7 @@
     <link rel="stylesheet" href="{{ asset('assets/css/nice-select.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/css/style.css') }}">
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@10/dist/sweetalert2.min.css">
 </head>
     <!--? Preloader Start -->
     <div id="preloader-active">
@@ -55,15 +56,23 @@
     <!-- Hero End -->
     @if (session('success'))
     <script>
-        alert("{{ session('success') }}");
+        Swal.fire({
+            icon: 'success',
+            title: 'Success',
+            text: "{{ session('success') }}"
+        });
     </script>
-@endif
+    @endif
 
-@if (session('error'))
+    @if (session('error'))
     <script>
-        alert("{{ session('error') }}");
+        Swal.fire({
+            icon: 'error',
+            title: 'Error',
+            text: "{{ session('error') }}"
+        });
     </script>
-@endif
+    @endif
     <!-- Form Start -->
     <div class="container mt-5 mb-5"> <!-- Menambahkan margin top dan bottom -->
     <div class="row">

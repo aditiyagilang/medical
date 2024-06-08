@@ -22,6 +22,20 @@
     <link rel="stylesheet" href="{{ asset('assets/css/nice-select.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/css/style.css') }}">
 </head>
+<style>
+    .team-item img {
+        width: 100%;
+        height: 250px; /* Adjust this value as needed */
+        object-fit: cover;
+    }
+    .button-image-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+</style>
+
+</style>
 <!--? Preloader Start -->
 <div id="preloader-active">
     <div class="preloader d-flex align-items-center justify-content-center">
@@ -70,9 +84,9 @@
                         <div class="overflow-hidden">
                             <img class="img-fluid" src="{{ asset($dokter->foto) }}" alt="Doctor Image">
                         </div>
-                        <div class="team-text bg-light text-center p-4">
-                            <h5>{{ $dokter->nama }}</h5>
-                            <p class="text-primary">{{ $dokter->nama }}</p>
+                        <div class="team-text bg-light text-center p-4" style="height: 200px;">
+                            <h5 style="height: 50px;">{{ $dokter->nama }}</h5>
+                            <p class="text-primary" style="height: 50px;">{{ $dokter->nama }}</p>
                             <div class="team-social text-center">
                                 <a href="{{ route('doctor.detail', $dokter->id) }}" class="btn btn-square" style="padding-top: 0; padding-bottom: 10px;">Pilih</a>
                             </div>
@@ -80,9 +94,6 @@
                     </div>
                 </div>
             @endforeach
-
-
-
             </div>
         </div>
     </div>
