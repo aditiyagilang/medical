@@ -113,7 +113,7 @@
                                 <label for="alamat">Alamat:</label>
                                 <textarea type="text" id="alamat" name="alamat" class="form-control" readonly>{{ $pasien->alamat }}</textarea>
                             </div>
-                            <label for="alamat">Riwayat:</label>
+                            <label for="alamat">Keluhan:</label>
                             @if ($riwayat->isNotEmpty())
                             @foreach ($riwayat as $record)
                                 <textarea type="text" id="riwayat" name="riwayat" class="form-control" readonly>{{ $record->riwayat_penyakit }}</textarea>

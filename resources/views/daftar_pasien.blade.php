@@ -136,7 +136,7 @@
                     <textarea id="alamat" name="alamat" class="form-control" required></textarea>
                 </div>
                 <div class="form-group">
-                    <label for="riwayat">Riwayat Penyakit:</label>
+                    <label for="riwayat">Keluhan:</label>
                     <textarea id="riwayat" name="riwayat" class="form-control" required></textarea>
                 </div>
                 <button type="submit" class="btn btn-primary">Simpan</button>
